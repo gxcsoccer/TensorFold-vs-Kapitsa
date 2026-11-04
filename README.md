@@ -1,5 +1,7 @@
 # TensorFold vs Kapitsa — 同一台 Mac、同一份权重上的深度评测
 
+**简体中文** | [English](README.en.md)
+
 > 评测对象：**Kapitsa 0.2.26**、**TensorFold 1.2.2（原生 Zig 引擎）**、**TensorFold 0.6.6（旧版 Python + MLX 引擎）**
 > 硬件：Mac mini M4 Pro（14 CPU / 20 GPU / 64 GB），macOS 27.2
 > 主模型：`TensorFold/Qwen3.8-27B-MLX-4bit`（14.98 GiB，64 层 dense，带视觉塔）
@@ -419,7 +421,8 @@ python3 analysis/aggregate.py
 
 - 原始结果：`results/*.json`（每个 run 的 meta/phases 全量）
 - 服务日志：`logs/*.log`（含引擎启动参数、批处理计数、drafter 命中）
-- 图表：`analysis/figs/*.png`\n- 机器可读汇总：`analysis/summary.md`（由 `analysis/aggregate.py` 从 `results/` 生成）
+- 图表：`analysis/figs/*.png`
+- 机器可读汇总：`analysis/summary.md`（由 `analysis/aggregate.py` 从 `results/` 生成）
 
 ## 10. 数据说明
 
