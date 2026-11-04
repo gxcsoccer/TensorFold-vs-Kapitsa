@@ -1,0 +1,18 @@
+info: Qwen3.8-27B: image tower loaded (1.79 GiB with scratch for 4096 image tokens a request)
+info: qwen27: prompt capacity=512 rows, startup stream and scratch reserve=25503842304 bytes
+info: qwen27: lone loop=plain width=1; lane window=16, lane copies=off
+info: qwen27: 22.7 GiB kept wired between requests, inside 70% of 64 GiB of RAM
+info: qwen27: Neural Engine prompt share requested_columns=0 loaded_columns=0 program_weight_bytes=0 loaded=false exact_output_qualified=false
+info: prompt cache: 3.7 GiB from 3.7 GiB free under the 70% cap (23.0 GiB in use once loaded and 16.1 GiB reserved outside that reading, 64 GiB of RAM, 2 GiB kept for prompt buffers)
+info: Qwen3.8-27B: 8 streams of 32768 tokens, images read
+[tensorfold] prompt chunks of up to 128 tokens, cut at replies 256+ tokens apart
+[tensorfold] profile: stable; registered overrides: none
+[tensorfold] serving local-model at http://127.0.0.1:8436/v1 (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: copies only; context: 32768; loaded in 4.5s)
+[tensorfold] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+info: prompt cache: 87 tokens, resumed at 0, kept 0; 0 states, 0 MiB and 0 MiB spare of 3778 MiB (hits 0, misses 1, evicted 0, refused 0, failed 0)
+[tensorfold] done chatcmpl-48178567fe64592d1f93093e1af465b1 prompt=87 cached=0 thinking=False effort=none tokens=2 sha=a22aa342241a finish=stop rounds=1 accepted=0/0 ttft=0.992 decode=0.074 elapsed=1.066 queued=0.000 tok/s=13.5
+[tensorfold] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[tensorfold] 127.0.0.1 "GET /v1/models HTTP/1.1" 200 -
+[tensorfold] shutting down (SIGINT): draining: new requests get 503; 0 request(s) in progress may finish within 20.0 s
+[tensorfold] shutting down: drained
+[tensorfold] shutting down: stopped

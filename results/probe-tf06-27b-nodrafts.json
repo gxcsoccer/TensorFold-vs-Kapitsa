@@ -1,0 +1,59 @@
+{
+ "label": "tf06-27b-nodrafts",
+ "spec": {
+  "engine": "tf06",
+  "model": "27b",
+  "ctx": 32768,
+  "slots": null,
+  "port": 8357,
+  "name": "local-model",
+  "extra": [
+   "--no-drafts"
+  ],
+  "env": {}
+ },
+ "cmd": [
+  "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+  "serve",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--port",
+  "8357",
+  "--name",
+  "local-model",
+  "--context",
+  "32768",
+  "--no-thinking",
+  "--no-drafts"
+ ],
+ "env": {},
+ "ts": 1793764046.36795,
+ "load_s": 133.86,
+ "footprint": {
+  "phys_footprint": 18253611008.0,
+  "phys_footprint_peak": 24696061952.0
+ },
+ "prefill": {
+  "prompt_tokens": 4093,
+  "ttft_s": 32.608,
+  "prefill_tps": 125.5
+ },
+ "decode": {
+  "n": 3,
+  "tps_median": 15.71,
+  "ttft_ms_median": 272.4,
+  "tokens": 256
+ },
+ "log_lines": [
+  "[tensorfold] serving local-model at http://127.0.0.1:8357/v1 (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: off; context: 32768; loaded in 133.4s)",
+  "[tensorfold] done req-91210fed8be2 prompt=15 cached=0 thinking=False effort=none tokens=3 sha=a79875f9240b finish=stop tok/s=15.2 ttft=0.30s prefill=0.30s rounds=2 accepted=0/0 ms/round=65.4 forward=65.4 draft=0.0 post=0.0 rows=1.0 checkpoints=0 (0.00 GiB, hits=0 misses=1 evictions=0)",
+  "[tensorfold] done req-52c117f7759b prompt=15 cached=0 thinking=False effort=none tokens=3 sha=a79875f9240b finish=stop tok/s=15.3 ttft=0.27s prefill=0.27s rounds=2 accepted=0/0 ms/round=65.3 forward=65.3 draft=0.0 post=0.0 rows=1.0 checkpoints=0 (0.00 GiB, hits=0 misses=2 evictions=0)",
+  "[tensorfold] done req-93a01d0260ff prompt=4093 cached=0 thinking=False effort=none tokens=8 sha=e03044350c73 finish=length tok/s=15.0 ttft=32.61s prefill=32.59s rounds=7 accepted=0/0 ms/round=66.8 forward=66.8 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.39 GiB, hits=0 misses=3 evictions=0)",
+  "[tensorfold] done req-6e04e185bd9a prompt=25 cached=0 thinking=False effort=none tokens=94 sha=6864e340e0ef finish=stop tok/s=15.5 ttft=0.27s prefill=0.27s rounds=93 accepted=0/0 ms/round=64.3 forward=64.3 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.39 GiB, hits=0 misses=4 evictions=0)",
+  "[tensorfold] done req-b11c3d748a6d prompt=25 cached=0 thinking=False effort=none tokens=94 sha=6864e340e0ef finish=stop tok/s=15.5 ttft=0.27s prefill=0.27s rounds=93 accepted=0/0 ms/round=64.3 forward=64.3 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.39 GiB, hits=0 misses=5 evictions=0)",
+  "[tensorfold] done req-9aac048a5ac1 prompt=25 cached=0 thinking=False effort=none tokens=94 sha=6864e340e0ef finish=stop tok/s=15.5 ttft=0.27s prefill=0.27s rounds=93 accepted=0/0 ms/round=64.3 forward=64.3 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.39 GiB, hits=0 misses=6 evictions=0)"
+ ],
+ "footprint_peak": {
+  "phys_footprint": 19327352832.0,
+  "phys_footprint_peak": 25769803776.0
+ }
+}

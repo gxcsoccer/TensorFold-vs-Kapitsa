@@ -1,0 +1,507 @@
+{
+ "meta": {
+  "label": "tf12-27b",
+  "spec": {
+   "engine": "tf12",
+   "model": "27b",
+   "ctx": 32768,
+   "slots": null,
+   "port": 8248,
+   "name": "local-model",
+   "extra": []
+  },
+  "model_path": "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "host": "GAOdeMac-mini.local",
+  "chip": "Apple M4 Pro",
+  "macos": "27.2",
+  "started": 1793761224.688283,
+  "phases": [
+   "startup",
+   "warmup",
+   "decode",
+   "prefill",
+   "cached",
+   "concurrency",
+   "longctx",
+   "tools",
+   "structured",
+   "thinking",
+   "errors",
+   "cancel",
+   "endpoints",
+   "quality",
+   "fidelity"
+  ],
+  "cmd": [
+   "tensorfold",
+   "serve",
+   "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+   "--port",
+   "8248",
+   "--name",
+   "local-model",
+   "--context",
+   "32768",
+   "--no-thinking"
+  ],
+  "footprint_end": {
+   "phys_footprint": 40802189312.0,
+   "phys_footprint_peak": 44023414784.0
+  },
+  "ended": 1793762072.947432
+ },
+ "phases": {
+  "startup": {
+   "load_s": 2.86,
+   "footprint_idle": {
+    "phys_footprint": 22548578304.0,
+    "phys_footprint_peak": 22548578304.0
+   },
+   "models": {
+    "object": "list",
+    "data": [
+     {
+      "id": "local-model",
+      "object": "model",
+      "created": 1793761227,
+      "owned_by": "tensorfold",
+      "context_length": 32768,
+      "max_model_len": 32768,
+      "reasoning": {
+       "default_enabled": false,
+       "supported_efforts": [
+        "xhigh",
+        "medium",
+        "low",
+        "none"
+       ]
+      }
+     }
+    ]
+   },
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 22816321992,
+     "cache": 0,
+     "peak": 22816321992
+    },
+    "live": {
+     "connections": 0,
+     "waiting": 0,
+     "decode_tokens_per_second": 0.0,
+     "prefill_tokens_per_second": 0.0
+    },
+    "version": "1.2.2",
+    "backend": "metal",
+    "device": "Apple M4 Pro"
+   },
+   "cmd": [
+    "tensorfold",
+    "serve",
+    "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+    "--port",
+    "8248",
+    "--name",
+    "local-model",
+    "--context",
+    "32768",
+    "--no-thinking"
+   ]
+  },
+  "warmup": {
+   "done": true,
+   "footprint": {
+    "phys_footprint": 23622320128.0,
+    "phys_footprint_peak": 23622320128.0
+   }
+  },
+  "decode": {
+   "greedy": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 442.2,
+    "ttft_ms_min": 435.8,
+    "decode_tps_median": 14.48,
+    "decode_tps_min": 14.42,
+    "decode_tps_max": 14.65,
+    "total_tps_median": 14.48,
+    "completion_tokens_median": 416,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "sampled": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 441.4,
+    "ttft_ms_min": 437.6,
+    "decode_tps_median": 14.57,
+    "decode_tps_min": 14.54,
+    "decode_tps_max": 14.62,
+    "total_tps_median": 14.57,
+    "completion_tokens_median": 458,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "greedy_text_sha": "c09f0b393ed6c752",
+   "greedy_sample": "```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key: int) -> int:\n        if key not in self.cache:\n            return -1\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key: int, value: int) -> None:\n        if key in self.cache:\n            self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.capacity:\n            self.cache.popitem(last=False)\n\n\nimport unittest\n\nclass TestLR"
+  },
+  "prefill": {
+   "4096": {
+    "prompt_tokens": 4094,
+    "ttft_s": 37.5853,
+    "prefill_tps": 108.93,
+    "ok": true
+   },
+   "16384": {
+    "prompt_tokens": 16379,
+    "ttft_s": 157.1401,
+    "prefill_tps": 104.23,
+    "ok": true
+   }
+  },
+  "cached": {
+   "first": {
+    "ttft_ms": 37045.0,
+    "prompt_tokens": 4094
+   },
+   "turns": [
+    {
+     "ttft_ms": 413.3,
+     "prompt_tokens": 4152,
+     "cached_tokens": 4125,
+     "ok": true
+    },
+    {
+     "ttft_ms": 405.2,
+     "prompt_tokens": 4179,
+     "cached_tokens": 4153,
+     "ok": true
+    },
+    {
+     "ttft_ms": 414.0,
+     "prompt_tokens": 4206,
+     "cached_tokens": 4180,
+     "ok": true
+    }
+   ]
+  },
+  "concurrency": {
+   "2": {
+    "ok": 2,
+    "wall_s": 7.796,
+    "aggregate_tps": 23.86,
+    "ttft_ms_median": 501.9,
+    "per_stream_tps_median": 12.78,
+    "completion_tokens": 186
+   },
+   "4": {
+    "ok": 4,
+    "wall_s": 9.893,
+    "aggregate_tps": 37.6,
+    "ttft_ms_median": 791.4,
+    "per_stream_tps_median": 10.22,
+    "completion_tokens": 372
+   },
+   "8": {
+    "ok": 8,
+    "wall_s": 12.391,
+    "aggregate_tps": 60.04,
+    "ttft_ms_median": 1406.5,
+    "per_stream_tps_median": 8.46,
+    "completion_tokens": 744
+   }
+  },
+  "longctx": {
+   "target_tokens": 24576,
+   "prompt_tokens": 22513,
+   "ttft_s": 224.944,
+   "ok": true,
+   "answer": "ZX-4471-QK",
+   "correct": true
+  },
+  "tools": {
+   "error": "AttributeError: 'tuple' object has no attribute 'get'"
+  },
+  "structured": {
+   "error": "AttributeError: 'tuple' object has no attribute 'get'"
+  },
+  "thinking": {
+   "off": {
+    "tokens": 6,
+    "ttft_ms": 446.4,
+    "total_s": 0.787,
+    "reasoning_chars": 0,
+    "answer": "$0.05",
+    "correct": true
+   },
+   "on": {
+    "tokens": 116,
+    "ttft_ms": 863.0,
+    "total_s": 8.752,
+    "reasoning_chars": 248,
+    "answer": "$0.05",
+    "correct": true
+   }
+  },
+  "errors": {
+   "empty_messages": {
+    "status": 400,
+    "error": "messages must be a non-empty list"
+   },
+   "unknown_model": {
+    "status": 200,
+    "error": "{\"id\": \"chatcmpl-7713211afa6329f14b0cfb2d27a4c0b6\", \"object\": \"chat.completion\", \"created\": 1793762050, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"messag"
+   },
+   "no_messages": {
+    "status": 400,
+    "error": "messages must be a non-empty list"
+   },
+   "huge_max_tokens": {
+    "status": 400,
+    "error": "This server's maximum context length is 32768 tokens, but the rendered prompt has 13 tokens and requests 1000000 reply tokens, which exceeds the context window. Reduce the prompt to at most 0 prompt t"
+   },
+   "bad_role": {
+    "status": 400,
+    "error": "message role must be system, developer, user, assistant or tool"
+   },
+   "malformed_json": {
+    "status": 400,
+    "error": "{\"error\": {\"message\": \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}}"
+   }
+  },
+  "cancel": {
+   "chunks_before_close": 5,
+   "health_after": 200,
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 43665273624,
+     "cache": 0,
+     "peak": 43665273624
+    },
+    "live": {
+     "connections": 1,
+     "waiting": 0,
+     "decode_tokens_per_second": 12.0,
+     "prefill_tokens_per_second": 57.9
+    },
+    "version": "1.2.2",
+    "backend": "metal",
+    "device": "Apple M4 Pro"
+   },
+   "next_request_ok": true,
+   "next_ttft_ms": 194.1
+  },
+  "endpoints": {
+   "/v1/models": {
+    "status": 200,
+    "bytes": 266
+   },
+   "/health": {
+    "status": 200,
+    "bytes": 354
+   },
+   "/metrics": {
+    "status": 200,
+    "bytes": 16907
+   },
+   "/v1/completions": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"cmpl-3f914a168037ce35655593c95b06001c\", \"object\": \"text_completion\", \"created\": 1793762052, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"text\": \" P"
+   },
+   "/v1/responses": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"resp_361fbd9bba26e04933959ba0fd1b0768\", \"object\": \"response\", \"created_at\": 1793762053, \"status\": \"completed\", \"error\": null, \"incomplete_details\": null, \"model\": \"local-model\", \"output\": [{\"i"
+   },
+   "/v1/messages": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"msg_c75626cb4d2c3859b710e766ad89300e\", \"type\": \"message\", \"role\": \"assistant\", \"model\": \"local-model\", \"content\": [{\"type\": \"text\", \"text\": \"OK\"}], \"stop_reason\": \"end_turn\", \"stop_sequence\": "
+   },
+   "/v1/embeddings": {
+    "status": 400
+   },
+   "image": {
+    "status": 400,
+    "ok": false,
+    "excerpt": "{\"error\": {\"message\": \"this server accepts text parts only; image, audio and video inputs are unsupported\", \"type\": \"invalid_request_error\"}}"
+   }
+  },
+  "quality": {
+   "rows": [
+    {
+     "id": "arith",
+     "ok": false,
+     "why": "regex",
+     "answer": "4219",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 302.8
+    },
+    {
+     "id": "speed",
+     "ok": true,
+     "why": "regex",
+     "answer": "120",
+     "reasoning_chars": 0,
+     "tokens": 4,
+     "ttft_ms": 440.8
+    },
+    {
+     "id": "count_r",
+     "ok": true,
+     "why": "regex",
+     "answer": "3",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 303.0
+    },
+    {
+     "id": "instr",
+     "ok": true,
+     "why": "regex",
+     "answer": "PONG",
+     "reasoning_chars": 0,
+     "tokens": 3,
+     "ttft_ms": 301.3
+    },
+    {
+     "id": "json",
+     "ok": true,
+     "why": "regex",
+     "answer": "{\"name\": \"Ada\", \"age\": 36, \"lang\": \"Python\"}",
+     "reasoning_chars": 0,
+     "tokens": 20,
+     "ttft_ms": 303.2
+    },
+    {
+     "id": "french",
+     "ok": true,
+     "why": "regex",
+     "answer": "Le rapide renard brun saute par-dessus le chien paresseux.",
+     "reasoning_chars": 0,
+     "tokens": 17,
+     "ttft_ms": 303.3
+    },
+    {
+     "id": "syllogism",
+     "ok": true,
+     "why": "regex",
+     "answer": "Yes",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 439.1
+    },
+    {
+     "id": "units",
+     "ok": true,
+     "why": "regex",
+     "answer": "5.63",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 441.4
+    },
+    {
+     "id": "summarize",
+     "ok": true,
+     "why": "words",
+     "answer": "Committee approved annual budget after long debate.",
+     "reasoning_chars": 0,
+     "tokens": 10,
+     "ttft_ms": 439.0
+    },
+    {
+     "id": "code",
+     "ok": true,
+     "why": "ok",
+     "answer": "```python\ndef is_palindrome(s):\n    cleaned = ''.join(ch.lower() for ch in s if not ch.isspace())\n    return cleaned == cleaned[::-1]\n```",
+     "reasoning_chars": 0,
+     "tokens": 40,
+     "ttft_ms": 441.9
+    },
+    {
+     "id": "date",
+     "ok": false,
+     "why": "regex",
+     "answer": "Wednesday",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 303.0
+    },
+    {
+     "id": "multi",
+     "ok": true,
+     "why": "regex",
+     "answer": "8",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 440.0
+    }
+   ],
+   "passed": 10,
+   "total": 12
+  },
+  "fidelity": {
+   "rows": [
+    {
+     "prompt": "Name three prime numbers between 10 and 20. Answer in one line.",
+     "sha": "8dcb1c3dd97851040492",
+     "chars": 14,
+     "answer": "11, 13, and 17",
+     "tokens": 12
+    },
+    {
+     "prompt": "What is the capital of Australia? One word.",
+     "sha": "b36f06bee2e4f5485ff6",
+     "chars": 8,
+     "answer": "Canberra",
+     "tokens": 3
+    },
+    {
+     "prompt": "Write the first line of a haiku about winter.",
+     "sha": "17f99d37fb4350c208a1",
+     "chars": 23,
+     "answer": "Cold wind bites the air",
+     "tokens": 6
+    },
+    {
+     "prompt": "Explain what a hash table is in one sentence.",
+     "sha": "0fc2edc0b659e209090a",
+     "chars": 170,
+     "answer": "A hash table is a data structure that uses a hash function to map keys to array indices, enabling efficient average-case constant-time lookups, insertions, and deletions.",
+     "tokens": 36
+    },
+    {
+     "prompt": "List the numbers 1 to 10 separated by commas.",
+     "sha": "f8cc5788974896b8f3f3",
+     "chars": 29,
+     "answer": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+     "tokens": 30
+    },
+    {
+     "prompt": "Complete: 'To be or not to be, that is the'",
+     "sha": "1f5087db919ced5c123c",
+     "chars": 8,
+     "answer": "question",
+     "tokens": 2
+    }
+   ],
+   "combined_sha": "7e79897e0f4ecf4726ed37f1"
+  }
+ }
+}

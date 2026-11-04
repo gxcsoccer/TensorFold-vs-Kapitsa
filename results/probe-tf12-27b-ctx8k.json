@@ -1,0 +1,50 @@
+{
+ "label": "tf12-27b-ctx8k",
+ "spec": {
+  "engine": "tf12",
+  "model": "27b",
+  "ctx": 8192,
+  "slots": null,
+  "port": 8314,
+  "name": "local-model",
+  "extra": [],
+  "env": {}
+ },
+ "cmd": [
+  "tensorfold",
+  "serve",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--port",
+  "8314",
+  "--name",
+  "local-model",
+  "--context",
+  "8192",
+  "--no-thinking"
+ ],
+ "env": {},
+ "ts": 1793764587.375577,
+ "load_s": 2.34,
+ "footprint": {
+  "phys_footprint": 21474836480.0,
+  "phys_footprint_peak": 21474836480.0
+ },
+ "prefill": {
+  "prompt_tokens": 4093,
+  "ttft_s": 38.235,
+  "prefill_tps": 107.0
+ },
+ "decode": {
+  "n": 3,
+  "tps_median": 14.69,
+  "ttft_ms_median": 306.5,
+  "tokens": 256
+ },
+ "log_lines": [
+  "[tensorfold] serving local-model at http://127.0.0.1:8314/v1 (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: copies only; context: 8192; loaded in 2.2s)"
+ ],
+ "footprint_peak": {
+  "phys_footprint": 22548578304.0,
+  "phys_footprint_peak": 22548578304.0
+ }
+}

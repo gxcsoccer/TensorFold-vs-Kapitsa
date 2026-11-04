@@ -1,0 +1,24 @@
+[kapitsa] NI_QMM: dense prefill GEMM qmr_k32_w14_m32_n128 (M >= 64), qmr_k64_w14_m16_n64 / qmr_k64_w12_m8_n64 below
+[kapitsa] slots: 4 (the default where memory allows; --slots sets how many requests run at once)
+[kapitsa] read 15.13 GB of weights in 2242 ms (6.8 GB/s)
+[kapitsa] read 0.00 GB of weights in 0 ms (0.0 GB/s)
+[kapitsa] no MTP head in /Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c; speculative decoding off
+[kapitsa] NI_QMM8=1: 8-bit prefill GEMMs on qmr8 (all but the MoE router)
+[kapitsa] compiled kernels in 15 ms
+[kapitsa] prewarmed 93 prefill pipelines in 23 ms
+[kapitsa] loaded /Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c: 64 layers, dense, 15.1 GB mapped in 2489 ms; weights 4-bit group 64 100%
+[kapitsa] NI_ANE: compiling the Neural Engine program in the background; prefill uses the GPU alone until it is ready
+[kapitsa] NI_ANE: Neural Engine program ready in the background (program was cached, 0.1 s)
+[kapitsa] tokenizer: 248044 tokens, 247587 merges, 33 added (232 ms)
+[kapitsa] DFlash2: no drafter found for /Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c (looked next to the model and in ~/.cache/nace-infer-models/drafters)
+[kapitsa] GPU: Apple M4 Pro, 20 cores
+[kapitsa] memory: 19.01 GB allocated (model, buffers, 4 slots' state), budget 53.4 GB (recommended working set 55.7 GB): KV room 34.42 GB = 525246 tokens (64 KB per token), one conversation up to 32768 of 32768 tokens
+[kapitsa] images: Qwen3.5 ViT (27 blocks, width 1152, 16-pixel patches; images of 65536 to 1200000 pixels), 0.93 GB loaded on the first image
+[kapitsa] drafter: none (no matching drafter found)
+[kapitsa] engine ready: local-model, context 32768, 4 slots, plain decoding, KFlash (none), images on
+[kapitsa] listening on http://127.0.0.1:8440
+Ready: chat at http://127.0.0.1:8440, API at http://127.0.0.1:8440/v1 (model "local-model", API key required). Ctrl+C stops.
+[kapitsa] SSD prefix cache: ~/.cache/kapitsa/prefix-cache/68afa79e6577a35f05f6ddf898cad40a, up to 32.0 GiB (auto: a quarter of the free space beyond 10 GiB, at most 32 GiB; --disk-cache 0 turns it off): 5 conversations taken back (4.0 GiB)
+[kapitsa] NI_ANE: Neural Engine FFN split (wavefront): 34/34 units (17408 channels; GPU 0) from the default for this chip, chunks >= 512 rows; row scales 6 ms, program cached 1 ms + load 51 ms (13 functions, MIL 133 KB); 629.0 MB Metal; ready in 0.1 s
+[kapitsa] NI_ANE: startup check 0.75% of the ANE's part from the GPU alone (2 functions, 603 ms)
+[kapitsa] chat: prompt 53 (cached 0) in 495 ms (+1.9 ms template/tokenize; last chunk: encoded by 2.0 ms, GPU start +18.7 ms, GPU 474.6 ms, wake +0.1 ms), 4 tokens in 261 ms (11.5 tok/s), length, KFlash (none): 3 cycles, 3 rows, 0 drafts accepted

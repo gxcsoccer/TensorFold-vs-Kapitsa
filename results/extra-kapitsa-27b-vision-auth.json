@@ -1,0 +1,35 @@
+{
+ "label": "kapitsa-27b-vision-auth",
+ "cmd": [
+  "kapitsa",
+  "serve",
+  "--model",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--private",
+  "--port",
+  "8440",
+  "--context",
+  "32768",
+  "--model-id",
+  "local-model",
+  "--api-key",
+  "local-test-key"
+ ],
+ "auth": {
+  "without_key": 401,
+  "with_key": 200,
+  "pass": true
+ },
+ "vision": {
+  "status": 401,
+  "content": "",
+  "pass": false,
+  "error": "{\"error\": {\"message\": \"invalid api key\", \"type\": \"auth_error\"}}"
+ },
+ "models": {
+  "error": {
+   "message": "invalid api key",
+   "type": "auth_error"
+  }
+ }
+}

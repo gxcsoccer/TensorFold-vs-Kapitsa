@@ -1,0 +1,16 @@
+{
+ "label": "tf06-27b-vision",
+ "cmd": [
+  "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+  "serve",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--port",
+  "8407",
+  "--name",
+  "local-model",
+  "--context",
+  "32768",
+  "--no-thinking",
+  "--vision"
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "label": "kapitsa-4b-mtp",
+ "spec": {
+  "engine": "kapitsa",
+  "model": "4b",
+  "ctx": 8192,
+  "slots": null,
+  "port": 8358,
+  "name": "local-model",
+  "extra": [
+   "--dflash",
+   "none"
+  ],
+  "env": {}
+ },
+ "cmd": [
+  "kapitsa",
+  "serve",
+  "--model",
+  "/Users/lang/.cache/kapitsa/models/qwen3.5-4b-4bit",
+  "--private",
+  "--port",
+  "8358",
+  "--context",
+  "8192",
+  "--model-id",
+  "local-model",
+  "--dflash",
+  "none"
+ ],
+ "env": {},
+ "ts": 1793764002.44575,
+ "load_s": 1.05,
+ "footprint": {
+  "phys_footprint": 2709520384.0,
+  "phys_footprint_peak": 2709520384.0
+ },
+ "prefill": {
+  "prompt_tokens": 4093,
+  "ttft_s": 2.174,
+  "prefill_tps": 1882.7
+ },
+ "decode": {
+  "n": 3,
+  "tps_median": 225.4,
+  "ttft_ms_median": 42.8,
+  "tokens": 256
+ },
+ "log_lines": [
+  "[kapitsa] drafter: MTP (turned off with --dflash none or NI_DFLASH, MTP head drafts depth 4)",
+  "[kapitsa] engine ready: local-model, context 8192, 4 slots, MTP speculative decoding depth 4, KFlash (MTP), images on",
+  "[kapitsa] chat: prompt 15 (cached 0) in 70 ms (+0.5 ms template/tokenize; last chunk: encoded by 38.6 ms, GPU start +8.9 ms, GPU 22.8 ms, wake +0.1 ms), 8 tokens in 101 ms (69.5 tok/s), length, KFlash (MTP): 3 cycles",
+  "[kapitsa] chat: prompt 15 (cached 0) in 25 ms (+0.5 ms template/tokenize; last chunk: encoded by 0.1 ms, GPU start +2.0 ms, GPU 23.0 ms, wake +0.1 ms), 8 tokens in 49 ms (142.6 tok/s), length, KFlash (MTP): 3 cycles",
+  "[kapitsa] chat: prompt 4093 (cached 0) in 2173 ms (+0.8 ms template/tokenize; last chunk: encoded by 2155.5 ms, GPU start +1.3 ms, GPU 15.8 ms, wake +0.1 ms), 8 tokens in 54 ms (128.5 tok/s), length, KFlash (MTP): 3 cycles",
+  "[kapitsa] chat: prompt 25 (cached 0) in 42 ms (+0.5 ms template/tokenize; last chunk: encoded by 0.1 ms, GPU start +1.8 ms, GPU 40.0 ms, wake +0.1 ms), 141 tokens in 659 ms (212.5 tok/s), stop, KFlash (MTP): 40 cycles",
+  "[kapitsa] chat: prompt 25 (cached 0) in 42 ms (+0.4 ms template/tokenize; last chunk: encoded by 0.1 ms, GPU start +1.7 ms, GPU 40.1 ms, wake +0.1 ms), 141 tokens in 638 ms (219.5 tok/s), stop, KFlash (MTP): 40 cycles",
+  "[kapitsa] chat: prompt 25 (cached 0) in 41 ms (+0.4 ms template/tokenize; last chunk: encoded by 0.1 ms, GPU start +1.2 ms, GPU 40.0 ms, wake +0.1 ms), 141 tokens in 638 ms (219.3 tok/s), stop, KFlash (MTP): 40 cycles"
+ ],
+ "footprint_peak": {
+  "phys_footprint": 4290772992.0,
+  "phys_footprint_peak": 4307550208.0
+ }
+}

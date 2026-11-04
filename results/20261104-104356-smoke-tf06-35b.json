@@ -1,0 +1,148 @@
+{
+ "meta": {
+  "label": "smoke-tf06-35b",
+  "spec": {
+   "engine": "tf06",
+   "model": "35b",
+   "ctx": 32768,
+   "slots": null,
+   "port": 8243,
+   "name": "local-model",
+   "extra": []
+  },
+  "model_path": "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+  "host": "GAOdeMac-mini.local",
+  "chip": "Apple M4 Pro",
+  "macos": "27.2",
+  "started": 1793760236.499671,
+  "phases": [
+   "startup",
+   "warmup",
+   "decode",
+   "prefill"
+  ],
+  "cmd": [
+   "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+   "serve",
+   "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+   "--port",
+   "8243",
+   "--name",
+   "local-model",
+   "--context",
+   "32768",
+   "--no-thinking"
+  ],
+  "footprint_end": {
+   "phys_footprint": 21474836480.0,
+   "phys_footprint_peak": 31138512896.0
+  },
+  "ended": 1793760353.42097
+ },
+ "phases": {
+  "startup": {
+   "load_s": 26.79,
+   "footprint_idle": {
+    "phys_footprint": 21474836480.0,
+    "phys_footprint_peak": 23622320128.0
+   },
+   "models": {
+    "object": "list",
+    "data": [
+     {
+      "id": "local-model",
+      "object": "model",
+      "created": 1793760263,
+      "owned_by": "tensorfold"
+     }
+    ]
+   },
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 20663789590,
+     "cache": 0,
+     "peak": 22604043464,
+     "budget": 48103633715,
+     "mlx_budget": 44882408243,
+     "footprint": 21074557904
+    },
+    "live": {
+     "connections": 0,
+     "waiting": 0,
+     "decode_tokens_per_second": 0.0,
+     "prefill_tokens_per_second": 0.0
+    }
+   },
+   "cmd": [
+    "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+    "serve",
+    "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+    "--port",
+    "8243",
+    "--name",
+    "local-model",
+    "--context",
+    "32768",
+    "--no-thinking"
+   ]
+  },
+  "warmup": {
+   "done": true,
+   "footprint": {
+    "phys_footprint": 21474836480.0,
+    "phys_footprint_peak": 23622320128.0
+   }
+  },
+  "decode": {
+   "greedy": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 111.1,
+    "ttft_ms_min": 110.3,
+    "decode_tps_median": 78.49,
+    "decode_tps_min": 77.41,
+    "decode_tps_max": 78.8,
+    "total_tps_median": 78.49,
+    "completion_tokens_median": 489,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "sampled": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 113.4,
+    "ttft_ms_min": 113.0,
+    "decode_tps_median": 76.57,
+    "decode_tps_min": 76.29,
+    "decode_tps_max": 76.92,
+    "total_tps_median": 76.57,
+    "completion_tokens_median": 429,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "greedy_text_sha": "8750331f638ee4f8",
+   "greedy_sample": "```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.cache = OrderedDict()\n        self.capacity = capacity\n\n    def get(self, key: int) -> int:\n        if key not in self.cache:\n            return -1\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key: int, value: int) -> None:\n        if key in self.cache:\n            self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.capacity:\n            self.cache.popitem(last=False)\n\n# Unit Tests\nimport unittest\n\n"
+  },
+  "prefill": {
+   "4096": {
+    "prompt_tokens": 4094,
+    "ttft_s": 5.1029,
+    "prefill_tps": 802.28,
+    "ok": true
+   },
+   "16384": {
+    "prompt_tokens": 16381,
+    "ttft_s": 22.3757,
+    "prefill_tps": 732.09,
+    "ok": true
+   }
+  }
+ }
+}

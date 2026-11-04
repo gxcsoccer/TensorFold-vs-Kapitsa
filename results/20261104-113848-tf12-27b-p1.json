@@ -1,0 +1,148 @@
+{
+ "meta": {
+  "label": "tf12-27b-p1",
+  "spec": {
+   "engine": "tf12",
+   "model": "27b",
+   "ctx": 32768,
+   "slots": null,
+   "port": 8338,
+   "name": "local-model",
+   "extra": [
+    "--parallel",
+    "1"
+   ],
+   "env": {}
+  },
+  "model_path": "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "host": "GAOdeMac-mini.local",
+  "chip": "Apple M4 Pro",
+  "macos": "27.2",
+  "started": 1793763528.132371,
+  "phases": [
+   "startup",
+   "warmup",
+   "concurrency"
+  ],
+  "cmd": [
+   "tensorfold",
+   "serve",
+   "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+   "--port",
+   "8338",
+   "--name",
+   "local-model",
+   "--context",
+   "32768",
+   "--no-thinking",
+   "--parallel",
+   "1"
+  ],
+  "footprint_end": {
+   "phys_footprint": 22548578304.0,
+   "phys_footprint_peak": 22548578304.0
+  },
+  "ended": 1793763627.300819
+ },
+ "phases": {
+  "startup": {
+   "load_s": 2.33,
+   "footprint_idle": {
+    "phys_footprint": 21474836480.0,
+    "phys_footprint_peak": 21474836480.0
+   },
+   "models": {
+    "object": "list",
+    "data": [
+     {
+      "id": "local-model",
+      "object": "model",
+      "created": 1793763530,
+      "owned_by": "tensorfold",
+      "context_length": 32768,
+      "max_model_len": 32768,
+      "reasoning": {
+       "default_enabled": false,
+       "supported_efforts": [
+        "xhigh",
+        "medium",
+        "low",
+        "none"
+       ]
+      }
+     }
+    ]
+   },
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 1,
+    "warming": false,
+    "memory": {
+     "active": 21716758264,
+     "cache": 0,
+     "peak": 21716758264
+    },
+    "live": {
+     "connections": 0,
+     "waiting": 0,
+     "decode_tokens_per_second": 0.0,
+     "prefill_tokens_per_second": 0.0
+    },
+    "version": "1.2.2",
+    "backend": "metal",
+    "device": "Apple M4 Pro"
+   },
+   "cmd": [
+    "tensorfold",
+    "serve",
+    "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+    "--port",
+    "8338",
+    "--name",
+    "local-model",
+    "--context",
+    "32768",
+    "--no-thinking",
+    "--parallel",
+    "1"
+   ]
+  },
+  "warmup": {
+   "done": true,
+   "footprint": {
+    "phys_footprint": 22548578304.0,
+    "phys_footprint_peak": 22548578304.0
+   }
+  },
+  "concurrency": {
+   "2": {
+    "ok": 2,
+    "wall_s": 13.123,
+    "aggregate_tps": 14.17,
+    "ttft_ms_median": 3580.4,
+    "per_stream_tps_median": 14.86,
+    "completion_tokens": 186
+   },
+   "4": {
+    "ok": 4,
+    "wall_s": 26.275,
+    "aggregate_tps": 14.16,
+    "ttft_ms_median": 10143.4,
+    "per_stream_tps_median": 14.84,
+    "completion_tokens": 372
+   },
+   "8": {
+    "ok": 8,
+    "wall_s": 53.076,
+    "aggregate_tps": 14.02,
+    "ttft_ms_median": 23391.4,
+    "per_stream_tps_median": 14.72,
+    "completion_tokens": 744
+   }
+  }
+ }
+}

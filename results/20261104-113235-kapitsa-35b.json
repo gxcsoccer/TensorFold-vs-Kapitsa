@@ -1,0 +1,687 @@
+{
+ "meta": {
+  "label": "kapitsa-35b",
+  "spec": {
+   "engine": "kapitsa",
+   "model": "35b",
+   "ctx": 32768,
+   "slots": 4,
+   "port": 8322,
+   "name": "local-model",
+   "extra": [],
+   "env": {}
+  },
+  "model_path": "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+  "host": "GAOdeMac-mini.local",
+  "chip": "Apple M4 Pro",
+  "macos": "27.2",
+  "started": 1793763155.2300239,
+  "phases": [
+   "startup",
+   "warmup",
+   "decode",
+   "prefill",
+   "cached",
+   "concurrency",
+   "longctx",
+   "tools",
+   "structured",
+   "thinking",
+   "errors",
+   "cancel",
+   "endpoints",
+   "quality",
+   "fidelity"
+  ],
+  "cmd": [
+   "kapitsa",
+   "serve",
+   "--model",
+   "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+   "--private",
+   "--port",
+   "8322",
+   "--context",
+   "32768",
+   "--model-id",
+   "local-model",
+   "--slots",
+   "4"
+  ],
+  "footprint_end": {
+   "phys_footprint": 23622320128.0,
+   "phys_footprint_peak": 23622320128.0
+  },
+  "ended": 1793763285.316503
+ },
+ "phases": {
+  "startup": {
+   "load_s": 4.14,
+   "footprint_idle": {
+    "phys_footprint": 19327352832.0,
+    "phys_footprint_peak": 19327352832.0
+   },
+   "models": {
+    "object": "list",
+    "data": [
+     {
+      "id": "local-model",
+      "object": "model",
+      "type": "model",
+      "display_name": "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "context_length": 32768,
+      "context_fit": 32768,
+      "slots": 4,
+      "active": true,
+      "downloaded": true
+     },
+     {
+      "id": "qwen3.5-4b:4bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "qwen3.5-4b:4bit",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "bytes": 4571200510,
+      "active": false,
+      "downloaded": true,
+      "variant": "4bit"
+     },
+     {
+      "id": "qwen3.5-4b:8bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "qwen3.5-4b:8bit",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "bytes": 6673595616,
+      "active": false,
+      "downloaded": true,
+      "variant": "8bit"
+     },
+     {
+      "id": "qwen3.5-9b:4bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "Qwen3.5-9B (4bit)",
+      "short_name": "9b",
+      "about": "the 4B's bigger sibling: the most capable model for a 16 GB Mac",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "qwen3.8-27b:4bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "Qwen3.8-27B (4bit)",
+      "short_name": "27b",
+      "about": "dense: the strongest coder of the three, slower to write",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "qwen3.6-35b-a3b:4bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "Qwen3.6-35B-A3B (4bit)",
+      "short_name": "35b",
+      "about": "MoE, 3B active per token: fast replies and fast reading",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "qwen3.8-flash-next:4bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "Qwen3.8-Flash-Next 180B-A7B (4bit)",
+      "short_name": "flash",
+      "about": "Qwen's 180B MoE, 7B active: hyper-connections, sparse attention, a 32 GB n-gram table read from the SSD",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "nemotron-labs-dory1.0-4b:nvfp4",
+      "object": "model",
+      "type": "model",
+      "display_name": "Nemotron Dory1.0 4B (nvfp4)",
+      "short_name": "dory",
+      "about": "NVIDIA's looped 4B: a shared block run 1-4 times per token (--loops; 2 by default), small and fast",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "nemotron-3-nano-4b:fp8",
+      "object": "model",
+      "type": "model",
+      "display_name": "Nemotron 3 Nano 4B (fp8)",
+      "short_name": "nano-4b",
+      "about": "NVIDIA's small hybrid Mamba-2 model, text only: prompt lookup drafts from the conversation",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "nemotron-nano-9b-v2:nvfp4",
+      "object": "model",
+      "type": "model",
+      "display_name": "Nemotron Nano 9B v2 (nvfp4)",
+      "short_name": "nano-9b",
+      "about": "NVIDIA's hybrid Mamba-2 9B in NVFP4, text only: reasoning switched with /think or enable_thinking",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "nemotron-3.5-lightning:nvfp4",
+      "object": "model",
+      "type": "model",
+      "display_name": "Nemotron 3.5 Lightning 30B-A3B (nvfp4)",
+      "short_name": "lightning",
+      "about": "NVIDIA's hybrid Mamba-2 MoE, 3B active, NVFP4 experts: fast replies on 32 GB Macs and up",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "nemotron-3.5-bolt:24gb",
+      "object": "model",
+      "type": "model",
+      "display_name": "Nemotron 3.5 Bolt 74B-A9B (24gb)",
+      "short_name": "bolt",
+      "about": "NVIDIA's hybrid Mamba-2 MoE, 9B active, 2-bit experts: an agentic model in 24 GB",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "nemotron-3.5-super-vl:nvfp4",
+      "object": "model",
+      "type": "model",
+      "display_name": "Nemotron 3.5 Super-VL 120B-A12B (nvfp4)",
+      "short_name": "super",
+      "about": "NVIDIA's hybrid Mamba-2 MoE, 12B active, NVFP4 experts (96 GB+ Macs, 128 GB for full context)",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "flint:4bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "Recursive Flint 40B-A2.5B (4bit)",
+      "short_name": "flint",
+      "about": "Recursive's MoE for coding agents, 2.5B active per token: reasoning and tool calls, prompt lookup drafts",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     },
+     {
+      "id": "clover-35b-a3b:4bit",
+      "object": "model",
+      "type": "model",
+      "display_name": "Clover-35B-A3B-Preview (4bit)",
+      "short_name": "clover",
+      "about": "DiffuSpace's block-diffusion MoE tuned from Qwen3.6-35B-A3B, 3B active: decodes with the 35B's drafter",
+      "created": 1793763155,
+      "created_at": "2026-11-04T03:32:35Z",
+      "owned_by": "nace",
+      "active": false,
+      "downloaded": false
+     }
+    ],
+    "has_more": false,
+    "first_id": "local-model",
+    "last_id": "clover-35b-a3b:4bit"
+   },
+   "health": {
+    "status": "ok"
+   },
+   "cmd": [
+    "kapitsa",
+    "serve",
+    "--model",
+    "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+    "--private",
+    "--port",
+    "8322",
+    "--context",
+    "32768",
+    "--model-id",
+    "local-model",
+    "--slots",
+    "4"
+   ]
+  },
+  "warmup": {
+   "done": true,
+   "footprint": {
+    "phys_footprint": 20401094656.0,
+    "phys_footprint_peak": 20401094656.0
+   }
+  },
+  "decode": {
+   "greedy": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 64.2,
+    "ttft_ms_min": 25.1,
+    "decode_tps_median": 109.71,
+    "decode_tps_min": 108.32,
+    "decode_tps_max": 113.54,
+    "total_tps_median": 109.71,
+    "completion_tokens_median": 487,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "sampled": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 24.8,
+    "ttft_ms_min": 24.7,
+    "decode_tps_median": 107.54,
+    "decode_tps_min": 107.42,
+    "decode_tps_max": 107.61,
+    "total_tps_median": 107.54,
+    "completion_tokens_median": 440,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "greedy_text_sha": "c25e829f5f5d3c88",
+   "greedy_sample": "```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.cache = OrderedDict()\n        self.capacity = capacity\n\n    def get(self, key: int) -> int:\n        if key not in self.cache:\n            return -1\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key: int, value: int) -> None:\n        if key in self.cache:\n            self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.capacity:\n            self.cache.popitem(last=False)\n\n# Unit Tests\nimport unittest\n\n"
+  },
+  "prefill": {
+   "4096": {
+    "prompt_tokens": 4095,
+    "ttft_s": 3.4436,
+    "prefill_tps": 1189.18,
+    "ok": true
+   },
+   "16384": {
+    "prompt_tokens": 16380,
+    "ttft_s": 16.7905,
+    "prefill_tps": 975.55,
+    "ok": true
+   }
+  },
+  "cached": {
+   "first": {
+    "ttft_ms": 3582.2,
+    "prompt_tokens": 4092
+   },
+   "turns": [
+    {
+     "ttft_ms": 97.3,
+     "prompt_tokens": 4146,
+     "cached_tokens": 4085,
+     "ok": true
+    },
+    {
+     "ttft_ms": 88.6,
+     "prompt_tokens": 4169,
+     "cached_tokens": 4139,
+     "ok": true
+    },
+    {
+     "ttft_ms": 85.7,
+     "prompt_tokens": 4193,
+     "cached_tokens": 4162,
+     "ok": true
+    }
+   ]
+  },
+  "concurrency": {
+   "2": {
+    "ok": 2,
+    "wall_s": 1.536,
+    "aggregate_tps": 96.37,
+    "ttft_ms_median": 142.9,
+    "per_stream_tps_median": 55.03,
+    "completion_tokens": 148
+   },
+   "4": {
+    "ok": 4,
+    "wall_s": 2.947,
+    "aggregate_tps": 100.43,
+    "ttft_ms_median": 185.0,
+    "per_stream_tps_median": 27.95,
+    "completion_tokens": 296
+   },
+   "8": {
+    "ok": 8,
+    "wall_s": 5.696,
+    "aggregate_tps": 103.92,
+    "ttft_ms_median": 1519.0,
+    "per_stream_tps_median": 27.35,
+    "completion_tokens": 592
+   }
+  },
+  "longctx": {
+   "target_tokens": 24576,
+   "prompt_tokens": 22513,
+   "ttft_s": 25.765,
+   "ok": true,
+   "answer": "ZX-4471-QK",
+   "correct": true
+  },
+  "tools": {
+   "nonstream": {
+    "status": null,
+    "tool_calls": [
+     {
+      "id": "call_IGIjBseoTUG0QHrfmV3D3XRE",
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\":\"Paris\"}"
+      }
+     }
+    ],
+    "pass": true
+   },
+   "roundtrip": {
+    "status": 200,
+    "content": "The weather in Paris is 18\u00b0C.",
+    "pass": true
+   },
+   "stream": {
+    "ok": true,
+    "tool_call_chunks": 1,
+    "pass": true
+   }
+  },
+  "structured": {
+   "json_schema": {
+    "status": 200,
+    "valid": true,
+    "excerpt": "{\n  \"name\": \"Elena Vance\",\n  \"age\": 34,\n  \"city\": \"Portland, Oregon\"\n}"
+   },
+   "json_object": {
+    "status": 200,
+    "valid": true
+   }
+  },
+  "thinking": {
+   "off": {
+    "tokens": 6,
+    "ttft_ms": 76.1,
+    "total_s": 0.132,
+    "reasoning_chars": 0,
+    "answer": "$0.05",
+    "correct": true
+   },
+   "on": {
+    "tokens": 471,
+    "ttft_ms": 70.6,
+    "total_s": 4.465,
+    "reasoning_chars": 1210,
+    "answer": "$0.05",
+    "correct": true
+   }
+  },
+  "errors": {
+   "empty_messages": {
+    "status": 400,
+    "error": "chat template: No messages provided. at row 43, column 24:\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n                       ^\n{%- endif %}\n at row 43, column 5:\n{%- if"
+   },
+   "unknown_model": {
+    "status": 200,
+    "error": "{\"id\": \"chatcmpl-179376327410672\", \"object\": \"chat.completion\", \"created\": 1793763274, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"message\": {\"role\": \"ass"
+   },
+   "no_messages": {
+    "status": 400,
+    "error": "bad request: [json.exception.out_of_range.403] key 'messages' not found"
+   },
+   "huge_max_tokens": {
+    "status": 200,
+    "error": "{\"id\": \"chatcmpl-17937632741393\", \"object\": \"chat.completion\", \"created\": 1793763274, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"message\": {\"role\": \"assi"
+   },
+   "bad_role": {
+    "status": 400,
+    "error": "chat template: No user query found in messages. at row 79, column 24:\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n                       ^\n{%- endif %}\n"
+   },
+   "malformed_json": {
+    "status": 400,
+    "error": "{\"error\":{\"message\":\"bad request: [json.exception.parse_error.101] parse error at line 1, column 3: syntax error while p"
+   }
+  },
+  "cancel": {
+   "chunks_before_close": 5,
+   "health_after": 200,
+   "health": {
+    "status": "ok"
+   },
+   "next_request_ok": true,
+   "next_ttft_ms": 45.4
+  },
+  "endpoints": {
+   "/v1/models": {
+    "status": 200,
+    "bytes": 4965
+   },
+   "/health": {
+    "status": 200,
+    "bytes": 15
+   },
+   "/metrics": {
+    "status": 404,
+    "bytes": 0
+   },
+   "/v1/completions": {
+    "status": 404,
+    "ok": false,
+    "excerpt": ""
+   },
+   "/v1/responses": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"resp_XP8Cyc20lnUf7Y0uOMV2C7Cw\", \"object\": \"response\", \"created_at\": 1793763280, \"status\": \"incomplete\", \"background\": false, \"error\": null, \"incomplete_details\": {\"reason\": \"max_output_tokens\""
+   },
+   "/v1/messages": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"msg_VwyEfQ4ELWjR6HPWirUCusP9\", \"type\": \"message\", \"role\": \"assistant\", \"model\": \"local-model\", \"content\": [{\"type\": \"text\", \"text\": \"OK\"}], \"stop_reason\": \"end_turn\", \"stop_sequence\": null, \"u"
+   },
+   "/v1/embeddings": {
+    "status": 404
+   },
+   "image": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"chatcmpl-179376328025228\", \"object\": \"chat.completion\", \"created\": 1793763280, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \" Red\"}, \"finish_rea"
+   }
+  },
+  "quality": {
+   "rows": [
+    {
+     "id": "arith",
+     "ok": false,
+     "why": "regex",
+     "answer": "4037",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 53.4
+    },
+    {
+     "id": "speed",
+     "ok": true,
+     "why": "regex",
+     "answer": "120",
+     "reasoning_chars": 0,
+     "tokens": 4,
+     "ttft_ms": 67.8
+    },
+    {
+     "id": "count_r",
+     "ok": true,
+     "why": "regex",
+     "answer": "3",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 58.7
+    },
+    {
+     "id": "instr",
+     "ok": true,
+     "why": "regex",
+     "answer": "PONG",
+     "reasoning_chars": 0,
+     "tokens": 3,
+     "ttft_ms": 44.3
+    },
+    {
+     "id": "json",
+     "ok": true,
+     "why": "regex",
+     "answer": "{\"name\": \"Ada\", \"age\": 36, \"lang\": \"Python\"}",
+     "reasoning_chars": 0,
+     "tokens": 20,
+     "ttft_ms": 58.6
+    },
+    {
+     "id": "french",
+     "ok": true,
+     "why": "regex",
+     "answer": "Le rapide renard brun saute par-dessus le chien paresseux.",
+     "reasoning_chars": 0,
+     "tokens": 17,
+     "ttft_ms": 57.5
+    },
+    {
+     "id": "syllogism",
+     "ok": true,
+     "why": "regex",
+     "answer": "Yes",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 65.5
+    },
+    {
+     "id": "units",
+     "ok": true,
+     "why": "regex",
+     "answer": "5.63",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 68.2
+    },
+    {
+     "id": "summarize",
+     "ok": true,
+     "why": "words",
+     "answer": "Committee approved budget after long debate.",
+     "reasoning_chars": 0,
+     "tokens": 9,
+     "ttft_ms": 61.9
+    },
+    {
+     "id": "code",
+     "ok": true,
+     "why": "ok",
+     "answer": "```python\ndef is_palindrome(s):\n    cleaned = ''.join(char.lower() for char in s if char.isalnum())\n    return cleaned == cleaned[::-1]\n```",
+     "reasoning_chars": 0,
+     "tokens": 39,
+     "ttft_ms": 69.2
+    },
+    {
+     "id": "date",
+     "ok": true,
+     "why": "regex",
+     "answer": "Tuesday",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 57.2
+    },
+    {
+     "id": "multi",
+     "ok": true,
+     "why": "regex",
+     "answer": "8",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 62.4
+    }
+   ],
+   "passed": 11,
+   "total": 12
+  },
+  "fidelity": {
+   "rows": [
+    {
+     "prompt": "Name three prime numbers between 10 and 20. Answer in one line.",
+     "sha": "c2352076bee38445dd95",
+     "chars": 15,
+     "answer": "11, 13, and 17.",
+     "tokens": 13
+    },
+    {
+     "prompt": "What is the capital of Australia? One word.",
+     "sha": "b36f06bee2e4f5485ff6",
+     "chars": 8,
+     "answer": "Canberra",
+     "tokens": 3
+    },
+    {
+     "prompt": "Write the first line of a haiku about winter.",
+     "sha": "2dcedad55f087cdb3299",
+     "chars": 22,
+     "answer": "Silent snow falls down",
+     "tokens": 6
+    },
+    {
+     "prompt": "Explain what a hash table is in one sentence.",
+     "sha": "d3303d1b1d22404da77c",
+     "chars": 241,
+     "answer": "A hash table is a data structure that stores key-value pairs and uses a hash function to compute an index into an array of buckets or slots, allowing for efficient average-case constant-time $O(1)$ ac",
+     "tokens": 50
+    },
+    {
+     "prompt": "List the numbers 1 to 10 separated by commas.",
+     "sha": "f8cc5788974896b8f3f3",
+     "chars": 29,
+     "answer": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+     "tokens": 30
+    },
+    {
+     "prompt": "Complete: 'To be or not to be, that is the'",
+     "sha": "e8ef9cb28d63ca93d367",
+     "chars": 132,
+     "answer": "\"Question.\"\n\nThe full line from William Shakespeare's *Hamlet* (Act 3, Scene 1) is:\n\"To be, or not to be, that is the **question**.\"",
+     "tokens": 43
+    }
+   ],
+   "combined_sha": "5633e6ae9f1f0c49d6c3f9ff"
+  }
+ }
+}

@@ -1,0 +1,31 @@
+[kapitsa] NI_QMM: dense prefill GEMM qmr_k32_w14_m32_n128 (M >= 64), qmr_k64_w14_m16_n64 / qmr_k64_w12_m8_n64 below
+[kapitsa] read 15.13 GB of weights in 2259 ms (6.7 GB/s)
+[kapitsa] read 0.00 GB of weights in 0 ms (0.0 GB/s)
+[kapitsa] no MTP head in /Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c; speculative decoding off
+[kapitsa] NI_QMM8=1: 8-bit prefill GEMMs on qmr8 (all but the MoE router)
+[kapitsa] compiled kernels in 16 ms
+[kapitsa] prewarmed 93 prefill pipelines in 24 ms
+[kapitsa] loaded /Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c: 64 layers, dense, 15.1 GB mapped in 2514 ms; weights 4-bit group 64 100%
+[kapitsa] NI_ANE: compiling the Neural Engine program in the background; prefill uses the GPU alone until it is ready
+[kapitsa] NI_ANE: Neural Engine program ready in the background (program was cached, 0.1 s)
+[kapitsa] tokenizer: 248044 tokens, 247587 merges, 33 added (225 ms)
+[kapitsa] DFlash2: no drafter found for /Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c (looked next to the model and in ~/.cache/nace-infer-models/drafters)
+[kapitsa] GPU: Apple M4 Pro, 20 cores
+[kapitsa] memory: 17.45 GB allocated (model, buffers, 1 slot's state), budget 53.4 GB (recommended working set 55.7 GB): KV room 35.98 GB = 549050 tokens (64 KB per token), one conversation up to 32768 of 32768 tokens
+[kapitsa] images: Qwen3.5 ViT (27 blocks, width 1152, 16-pixel patches; images of 65536 to 1200000 pixels), 0.93 GB loaded on the first image
+[kapitsa] drafter: none (no matching drafter found)
+[kapitsa] engine ready: local-model, context 32768, 1 slots, plain decoding, KFlash (none), images on
+[kapitsa] listening on http://127.0.0.1:8328
+Ready: chat at http://127.0.0.1:8328, API at http://127.0.0.1:8328/v1 (model "local-model"). Ctrl+C stops.
+[kapitsa] SSD prefix cache: ~/.cache/kapitsa/prefix-cache/68afa79e6577a35f05f6ddf898cad40a, up to 32.0 GiB (auto: a quarter of the free space beyond 10 GiB, at most 32 GiB; --disk-cache 0 turns it off): 7 conversations taken back (5.5 GiB)
+[kapitsa] NI_ANE: Neural Engine FFN split (wavefront): 34/34 units (17408 channels; GPU 0) from the default for this chip, chunks >= 512 rows; row scales 3 ms, program cached 1 ms + load 87 ms (13 functions, MIL 133 KB); 629.0 MB Metal; ready in 0.1 s
+[kapitsa] NI_ANE: prefill chunks of more than 2048 rows run on the GPU alone (prefill chunk is 4096)
+[kapitsa] NI_ANE: startup check 0.75% of the ANE's part from the GPU alone (2 functions, 595 ms)
+[kapitsa] chat: prompt 15 (cached 0) in 175 ms (+2.0 ms template/tokenize; last chunk: encoded by 2.2 ms, GPU start +30.9 ms, GPU 142.0 ms, wake +0.1 ms), 3 tokens in 191 ms (10.5 tok/s), stop, KFlash (none): 2 cycles, 2 rows, 0 drafts accepted
+[kapitsa] chat: prompt 15 (cached 8) in 98 ms (+0.2 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.6 ms, GPU 97.2 ms, wake +0.1 ms), 3 tokens in 189 ms (10.6 tok/s), stop, KFlash (none): 2 cycles, 2 rows, 0 drafts accepted
+[kapitsa] NI_QMM_GU: dense gate/up/SwiGLU fused (qmr_gu_k32_w14_m32_n64, m16_n64 / m8_n32 below 64 rows)
+[kapitsa] chat: prompt 4094 (cached 0) in 30004 ms (+8.1 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.1 ms, GPU 30003.5 ms, wake +0.1 ms), 8 tokens in 517 ms (13.5 tok/s), length, KFlash (none): 7 cycles, 7 rows, 0 drafts accepted
+[kapitsa] SSD cache: saved the conversation slot 0 held (4087 tokens, 425 MB written) in 177 ms
+[kapitsa] chat: prompt 16378 (cached 0) in 123291 ms (+102.5 ms template/tokenize; last chunk: encoded by 59813.9 ms, GPU start +31209.3 ms, GPU 32267.6 ms, wake +0.2 ms), 8 tokens in 542 ms (12.9 tok/s), length, KFlash (none): 7 cycles, 7 rows, 0 drafts accepted
+[kapitsa] SSD cache: saved slot 0 (16371 tokens, 1 restore point; 32 of 32 KV blocks and 1 state new: 1230 MB) in 347 ms
+[kapitsa] SSD prefix cache: 1 conversation saved as the server stops (1230 MB in 347 ms)

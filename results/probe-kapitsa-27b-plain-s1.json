@@ -1,0 +1,60 @@
+{
+ "label": "kapitsa-27b-plain-s1",
+ "spec": {
+  "engine": "kapitsa",
+  "model": "27b",
+  "ctx": 32768,
+  "slots": 1,
+  "port": 8307,
+  "name": "local-model",
+  "extra": [],
+  "env": {}
+ },
+ "cmd": [
+  "kapitsa",
+  "serve",
+  "--model",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--private",
+  "--port",
+  "8307",
+  "--context",
+  "32768",
+  "--model-id",
+  "local-model",
+  "--slots",
+  "1"
+ ],
+ "env": {},
+ "ts": 1793762223.091542,
+ "load_s": 1.56,
+ "footprint": {
+  "phys_footprint": 15032385536.0,
+  "phys_footprint_peak": 15032385536.0
+ },
+ "prefill": {
+  "prompt_tokens": 4094,
+  "ttft_s": 10.572,
+  "prefill_tps": 387.2
+ },
+ "decode": {
+  "n": 3,
+  "tps_median": 15.85,
+  "ttft_ms_median": 103.9,
+  "tokens": 256
+ },
+ "log_lines": [
+  "[kapitsa] DFlash2: no drafter found for /Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c (looked next to the model and in ~/.cache/nace-infer-models/drafters)",
+  "[kapitsa] drafter: none (no matching drafter found)",
+  "[kapitsa] chat: prompt 15 (cached 0) in 164 ms (+1.5 ms template/tokenize; last chunk: encoded by 0.6 ms, GPU start +22.3 ms, GPU 140.9 ms, wake +0.1 ms), 3 tokens in 187 ms (10.7 tok/s), stop, KFlash (none): 2 cycles, 2 rows, 0 drafts accepted",
+  "[kapitsa] chat: prompt 15 (cached 8) in 96 ms (+0.2 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.1 ms, GPU 96.0 ms, wake +0.1 ms), 3 tokens in 188 ms (10.6 tok/s), stop, KFlash (none): 2 cycles, 2 rows, 0 drafts accepted",
+  "[kapitsa] chat: prompt 4094 (cached 0) in 10560 ms (+11.5 ms template/tokenize; last chunk: encoded by 10456.2 ms, GPU start +5.4 ms, GPU 97.9 ms, wake +0.1 ms), 8 tokens in 516 ms (13.6 tok/s), length, KFlash (none): 7 cycles, 7 rows, 0 drafts accepted",
+  "[kapitsa] chat: prompt 25 (cached 0) in 257 ms (+42.4 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.6 ms, GPU 256.2 ms, wake +0.1 ms), 94 tokens in 5990 ms (15.5 tok/s), stop, KFlash (none): 93 cycles, 93 rows, 0 drafts accepted",
+  "[kapitsa] chat: prompt 25 (cached 18) in 103 ms (+0.2 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +2.9 ms, GPU 99.6 ms, wake +0.2 ms), 94 tokens in 5995 ms (15.5 tok/s), stop, KFlash (none): 93 cycles, 93 rows, 0 drafts accepted",
+  "[kapitsa] chat: prompt 25 (cached 18) in 103 ms (+0.2 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +3.0 ms, GPU 99.8 ms, wake +0.1 ms), 94 tokens in 5999 ms (15.5 tok/s), stop, KFlash (none): 93 cycles, 93 rows, 0 drafts accepted"
+ ],
+ "footprint_peak": {
+  "phys_footprint": 18253611008.0,
+  "phys_footprint_peak": 18253611008.0
+ }
+}

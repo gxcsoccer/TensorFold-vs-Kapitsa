@@ -1,0 +1,65 @@
+{
+ "label": "kapitsa-27b-dflash",
+ "spec": {
+  "engine": "kapitsa",
+  "model": "27b",
+  "ctx": 32768,
+  "slots": 1,
+  "port": 8350,
+  "name": "local-model",
+  "extra": [
+   "--dflash",
+   "/Users/lang/.cache/huggingface/hub/models--z-lab--Qwen3.8-27B-DFlash2/snapshots/50307d4c4cde6860d4eee73e2547cd786fe8e8a4"
+  ],
+  "env": {}
+ },
+ "cmd": [
+  "kapitsa",
+  "serve",
+  "--model",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--private",
+  "--port",
+  "8350",
+  "--context",
+  "32768",
+  "--model-id",
+  "local-model",
+  "--slots",
+  "1",
+  "--dflash",
+  "/Users/lang/.cache/huggingface/hub/models--z-lab--Qwen3.8-27B-DFlash2/snapshots/50307d4c4cde6860d4eee73e2547cd786fe8e8a4"
+ ],
+ "env": {},
+ "ts": 1793762199.501324,
+ "load_s": 3.91,
+ "footprint": {
+  "phys_footprint": 17179869184.0,
+  "phys_footprint_peak": 20401094656.0
+ },
+ "prefill": {
+  "prompt_tokens": 4093,
+  "ttft_s": 10.274,
+  "prefill_tps": 398.4
+ },
+ "decode": {
+  "n": 3,
+  "tps_median": 93.08,
+  "ttft_ms_median": 102.2,
+  "tokens": 256
+ },
+ "log_lines": [
+  "[kapitsa] drafter: DFlash2 50307d4c4cde6860d4eee73e2547cd786fe8e8a4 (named with --dflash)",
+  "[kapitsa] engine ready: local-model, context 32768, 1 slots, KFlash speculative decoding (DFlash2 lattice, tree verify), KFlash (DFlash2), images on",
+  "[kapitsa] chat: prompt 15 (cached 0) in 160 ms (+2.0 ms template/tokenize; last chunk: encoded by 0.5 ms, GPU start +18.3 ms, GPU 141.0 ms, wake +0.1 ms), 3 tokens in 87 ms (23.1 tok/s), stop, 2.00 tok/cycle, KFlash (DFlash2): 1 cycles",
+  "[kapitsa] chat: prompt 15 (cached 8) in 96 ms (+0.2 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.1 ms, GPU 95.6 ms, wake +0.1 ms), 3 tokens in 85 ms (23.5 tok/s), stop, 2.00 tok/cycle, KFlash (DFlash2): 1 cycles",
+  "[kapitsa] chat: prompt 4093 (cached 0) in 10266 ms (+7.2 ms template/tokenize; last chunk: encoded by 10163.1 ms, GPU start +4.8 ms, GPU 97.7 ms, wake +0.2 ms), 8 tokens in 307 ms (22.8 tok/s), length, 3.50 tok/cycle, KFlash (DFlash2): 2 cycles",
+  "[kapitsa] chat: prompt 25 (cached 0) in 254 ms (+44.9 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.6 ms, GPU 253.5 ms, wake +0.1 ms), 94 tokens in 1080 ms (86.1 tok/s), stop, 7.15 tok/cycle, KFlash (DFlash2): 13 cycles",
+  "[kapitsa] chat: prompt 25 (cached 18) in 101 ms (+0.2 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.1 ms, GPU 100.7 ms, wake +0.1 ms), 94 tokens in 1091 ms (85.2 tok/s), stop, 7.15 tok/cycle, KFlash (DFlash2): 13 cycles",
+  "[kapitsa] chat: prompt 25 (cached 18) in 102 ms (+0.2 ms template/tokenize; last chunk: encoded by 0.2 ms, GPU start +0.1 ms, GPU 101.2 ms, wake +0.1 ms), 94 tokens in 1092 ms (85.1 tok/s), stop, 7.15 tok/cycle, KFlash (DFlash2): 13 cycles"
+ ],
+ "footprint_peak": {
+  "phys_footprint": 20401094656.0,
+  "phys_footprint_peak": 20401094656.0
+ }
+}

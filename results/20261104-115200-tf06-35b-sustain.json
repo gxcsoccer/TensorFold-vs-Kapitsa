@@ -1,0 +1,112 @@
+{
+ "meta": {
+  "label": "tf06-35b-sustain",
+  "spec": {
+   "engine": "tf06",
+   "model": "35b",
+   "ctx": 32768,
+   "slots": null,
+   "port": 8247,
+   "name": "local-model",
+   "extra": [],
+   "env": {}
+  },
+  "model_path": "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+  "host": "GAOdeMac-mini.local",
+  "chip": "Apple M4 Pro",
+  "macos": "27.2",
+  "started": 1793764320.7849972,
+  "phases": [
+   "startup",
+   "warmup",
+   "sustain"
+  ],
+  "cmd": [
+   "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+   "serve",
+   "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+   "--port",
+   "8247",
+   "--name",
+   "local-model",
+   "--context",
+   "32768",
+   "--no-thinking"
+  ],
+  "footprint_end": {
+   "phys_footprint": 21474836480.0,
+   "phys_footprint_peak": 23622320128.0
+  },
+  "ended": 1793764421.2577899
+ },
+ "phases": {
+  "startup": {
+   "load_s": 23.36,
+   "footprint_idle": {
+    "phys_footprint": 21474836480.0,
+    "phys_footprint_peak": 23622320128.0
+   },
+   "models": {
+    "object": "list",
+    "data": [
+     {
+      "id": "local-model",
+      "object": "model",
+      "created": 1793764344,
+      "owned_by": "tensorfold"
+     }
+    ]
+   },
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 20663789590,
+     "cache": 0,
+     "peak": 22604043464,
+     "budget": 48103633715,
+     "mlx_budget": 44882408243,
+     "footprint": 21960932232
+    },
+    "live": {
+     "connections": 0,
+     "waiting": 0,
+     "decode_tokens_per_second": 0.0,
+     "prefill_tokens_per_second": 0.0
+    }
+   },
+   "cmd": [
+    "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+    "serve",
+    "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+    "--port",
+    "8247",
+    "--name",
+    "local-model",
+    "--context",
+    "32768",
+    "--no-thinking"
+   ]
+  },
+  "warmup": {
+   "done": true,
+   "footprint": {
+    "phys_footprint": 21474836480.0,
+    "phys_footprint_peak": 23622320128.0
+   }
+  },
+  "sustain": {
+   "runs": 45,
+   "first_third_median": 89.61,
+   "last_third_median": 89.07,
+   "falloff_pct": 0.6,
+   "thermal_before": "nominal",
+   "thermal_after": "nominal"
+  }
+ }
+}

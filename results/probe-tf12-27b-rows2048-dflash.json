@@ -1,0 +1,60 @@
+{
+ "label": "tf12-27b-rows2048-dflash",
+ "spec": {
+  "engine": "tf12",
+  "model": "27b",
+  "ctx": 32768,
+  "slots": null,
+  "port": 8345,
+  "name": "local-model",
+  "extra": [
+   "--drafter",
+   "z-lab/Qwen3.8-27B-DFlash2"
+  ],
+  "env": {
+   "TF_PROMPT_ROWS": "2048"
+  }
+ },
+ "cmd": [
+  "tensorfold",
+  "serve",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--port",
+  "8345",
+  "--name",
+  "local-model",
+  "--context",
+  "32768",
+  "--no-thinking",
+  "--drafter",
+  "z-lab/Qwen3.8-27B-DFlash2"
+ ],
+ "env": {
+  "TF_PROMPT_ROWS": "2048"
+ },
+ "ts": 1793762390.723579,
+ "load_s": 5.67,
+ "footprint": {
+  "phys_footprint": 34359738368.0,
+  "phys_footprint_peak": 34359738368.0
+ },
+ "prefill": {
+  "prompt_tokens": 4093,
+  "ttft_s": 38.646,
+  "prefill_tps": 105.9
+ },
+ "decode": {
+  "n": 3,
+  "tps_median": 71.62,
+  "ttft_ms_median": 418.2,
+  "tokens": 256
+ },
+ "log_lines": [
+  "info: Qwen3.8-27B: 5 streams of 32768 tokens, DFlash2 drafts for one of them",
+  "[tensorfold] serving local-model at http://127.0.0.1:8345/v1 (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: DFlash2 (z-lab/Qwen3.8-27B-DFlash2) + copies; context: 32768; loaded in 5.6s)"
+ ],
+ "footprint_peak": {
+  "phys_footprint": 36507222016.0,
+  "phys_footprint_peak": 36507222016.0
+ }
+}

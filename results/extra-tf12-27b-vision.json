@@ -1,0 +1,44 @@
+{
+ "label": "tf12-27b-vision",
+ "cmd": [
+  "tensorfold",
+  "serve",
+  "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "--port",
+  "8436",
+  "--name",
+  "local-model",
+  "--context",
+  "32768",
+  "--no-thinking",
+  "--vision"
+ ],
+ "vision": {
+  "status": 200,
+  "content": "pink",
+  "pass": true,
+  "error": null
+ },
+ "models": {
+  "object": "list",
+  "data": [
+   {
+    "id": "local-model",
+    "object": "model",
+    "created": 1793763475,
+    "owned_by": "tensorfold",
+    "context_length": 32768,
+    "max_model_len": 32768,
+    "reasoning": {
+     "default_enabled": false,
+     "supported_efforts": [
+      "xhigh",
+      "medium",
+      "low",
+      "none"
+     ]
+    }
+   }
+  ]
+ }
+}

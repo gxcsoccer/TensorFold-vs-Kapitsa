@@ -1,0 +1,528 @@
+{
+ "meta": {
+  "label": "tf06-35b",
+  "spec": {
+   "engine": "tf06",
+   "model": "35b",
+   "ctx": 32768,
+   "slots": null,
+   "port": 8394,
+   "name": "local-model",
+   "extra": [],
+   "env": {}
+  },
+  "model_path": "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+  "host": "GAOdeMac-mini.local",
+  "chip": "Apple M4 Pro",
+  "macos": "27.2",
+  "started": 1793763292.9437509,
+  "phases": [
+   "startup",
+   "warmup",
+   "decode",
+   "prefill",
+   "cached",
+   "concurrency",
+   "longctx",
+   "tools",
+   "structured",
+   "thinking",
+   "errors",
+   "cancel",
+   "endpoints",
+   "quality",
+   "fidelity"
+  ],
+  "cmd": [
+   "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+   "serve",
+   "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+   "--port",
+   "8394",
+   "--name",
+   "local-model",
+   "--context",
+   "32768",
+   "--no-thinking"
+  ],
+  "footprint_end": {
+   "phys_footprint": 21474836480.0,
+   "phys_footprint_peak": 31138512896.0
+  },
+  "ended": 1793763452.644835
+ },
+ "phases": {
+  "startup": {
+   "load_s": 22.87,
+   "footprint_idle": {
+    "phys_footprint": 21474836480.0,
+    "phys_footprint_peak": 23622320128.0
+   },
+   "models": {
+    "object": "list",
+    "data": [
+     {
+      "id": "local-model",
+      "object": "model",
+      "created": 1793763315,
+      "owned_by": "tensorfold"
+     }
+    ]
+   },
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 20663773206,
+     "cache": 0,
+     "peak": 22604027080,
+     "budget": 48103633715,
+     "mlx_budget": 44882408243,
+     "footprint": 21073705840
+    },
+    "live": {
+     "connections": 0,
+     "waiting": 0,
+     "decode_tokens_per_second": 0.0,
+     "prefill_tokens_per_second": 0.0
+    }
+   },
+   "cmd": [
+    "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+    "serve",
+    "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+    "--port",
+    "8394",
+    "--name",
+    "local-model",
+    "--context",
+    "32768",
+    "--no-thinking"
+   ]
+  },
+  "warmup": {
+   "done": true,
+   "footprint": {
+    "phys_footprint": 21474836480.0,
+    "phys_footprint_peak": 23622320128.0
+   }
+  },
+  "decode": {
+   "greedy": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 101.6,
+    "ttft_ms_min": 101.5,
+    "decode_tps_median": 88.31,
+    "decode_tps_min": 88.19,
+    "decode_tps_max": 88.39,
+    "total_tps_median": 88.31,
+    "completion_tokens_median": 489,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "sampled": {
+    "n": 5,
+    "ok": 5,
+    "ttft_ms_median": 101.8,
+    "ttft_ms_min": 101.7,
+    "decode_tps_median": 87.41,
+    "decode_tps_min": 87.27,
+    "decode_tps_max": 87.43,
+    "total_tps_median": 87.41,
+    "completion_tokens_median": 429,
+    "prompt_tokens_median": 37,
+    "server_tps_median": null
+   },
+   "greedy_text_sha": "8750331f638ee4f8",
+   "greedy_sample": "```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.cache = OrderedDict()\n        self.capacity = capacity\n\n    def get(self, key: int) -> int:\n        if key not in self.cache:\n            return -1\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key: int, value: int) -> None:\n        if key in self.cache:\n            self.cache.move_to_end(key)\n        self.cache[key] = value\n        if len(self.cache) > self.capacity:\n            self.cache.popitem(last=False)\n\n# Unit Tests\nimport unittest\n\n"
+  },
+  "prefill": {
+   "4096": {
+    "prompt_tokens": 4096,
+    "ttft_s": 4.401,
+    "prefill_tps": 930.7,
+    "ok": true
+   },
+   "16384": {
+    "prompt_tokens": 16378,
+    "ttft_s": 20.0405,
+    "prefill_tps": 817.24,
+    "ok": true
+   }
+  },
+  "cached": {
+   "first": {
+    "ttft_ms": 4297.5,
+    "prompt_tokens": 4093
+   },
+   "turns": [
+    {
+     "ttft_ms": 174.5,
+     "prompt_tokens": 4147,
+     "cached_tokens": 4086,
+     "ok": true
+    },
+    {
+     "ttft_ms": 323.1,
+     "prompt_tokens": 4170,
+     "cached_tokens": 4086,
+     "ok": true
+    },
+    {
+     "ttft_ms": 324.6,
+     "prompt_tokens": 4194,
+     "cached_tokens": 4086,
+     "ok": true
+    }
+   ]
+  },
+  "concurrency": {
+   "2": {
+    "ok": 2,
+    "wall_s": 1.547,
+    "aggregate_tps": 95.68,
+    "ttft_ms_median": 146.4,
+    "per_stream_tps_median": 53.66,
+    "completion_tokens": 148
+   },
+   "4": {
+    "ok": 4,
+    "wall_s": 2.14,
+    "aggregate_tps": 138.34,
+    "ttft_ms_median": 242.4,
+    "per_stream_tps_median": 39.44,
+    "completion_tokens": 296
+   },
+   "8": {
+    "ok": 8,
+    "wall_s": 3.394,
+    "aggregate_tps": 174.42,
+    "ttft_ms_median": 430.6,
+    "per_stream_tps_median": 25.39,
+    "completion_tokens": 592
+   }
+  },
+  "longctx": {
+   "target_tokens": 24576,
+   "prompt_tokens": 22513,
+   "ttft_s": 27.67,
+   "ok": true,
+   "answer": "ZX-4471-QK",
+   "correct": true
+  },
+  "tools": {
+   "nonstream": {
+    "status": null,
+    "tool_calls": [
+     {
+      "id": "call_81773dabb3584e0b8b2229ca",
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\":\"Paris\"}"
+      }
+     }
+    ],
+    "pass": true
+   },
+   "roundtrip": {
+    "status": 200,
+    "content": "The weather in Paris is 18\u00b0C.",
+    "pass": true
+   },
+   "stream": {
+    "ok": true,
+    "tool_call_chunks": 5,
+    "pass": true
+   }
+  },
+  "structured": {
+   "json_schema": {
+    "status": 400,
+    "valid": false,
+    "excerpt": ""
+   },
+   "json_object": {
+    "status": 400,
+    "valid": false
+   }
+  },
+  "thinking": {
+   "off": {
+    "tokens": 6,
+    "ttft_ms": 121.7,
+    "total_s": 0.184,
+    "reasoning_chars": 0,
+    "answer": "$0.05",
+    "correct": true
+   },
+   "on": {
+    "tokens": 512,
+    "ttft_ms": 118.8,
+    "total_s": 5.863,
+    "reasoning_chars": 1369,
+    "answer": "",
+    "correct": false
+   }
+  },
+  "errors": {
+   "empty_messages": {
+    "status": 400,
+    "error": "messages must be a non-empty list"
+   },
+   "unknown_model": {
+    "status": 200,
+    "error": "{\"id\": \"chatcmpl-bb65ffd2d7df4940a49348283d2df1e1\", \"object\": \"chat.completion\", \"created\": 1793763446, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"messag"
+   },
+   "no_messages": {
+    "status": 400,
+    "error": "messages must be a non-empty list"
+   },
+   "huge_max_tokens": {
+    "status": 400,
+    "error": "This server's maximum context length is 32768 tokens, but the rendered prompt has 13 tokens and requests 1000000 reply tokens, which exceeds the context window. Reduce the prompt to at most 0 prompt t"
+   },
+   "bad_role": {
+    "status": 400,
+    "error": "message role must be system, developer, user, assistant or tool"
+   },
+   "malformed_json": {
+    "status": 400,
+    "error": "{\"error\": {\"message\": \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}}"
+   }
+  },
+  "cancel": {
+   "chunks_before_close": 5,
+   "health_after": 200,
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 20983769910,
+     "cache": 77526348,
+     "peak": 20992826902,
+     "budget": 48103633715,
+     "mlx_budget": 44882408243,
+     "footprint": 21495217080
+    },
+    "live": {
+     "connections": 1,
+     "waiting": 0,
+     "decode_tokens_per_second": 83.0,
+     "prefill_tokens_per_second": 346.3
+    }
+   },
+   "next_request_ok": true,
+   "next_ttft_ms": 58.0
+  },
+  "endpoints": {
+   "/v1/models": {
+    "status": 200,
+    "bytes": 119
+   },
+   "/health": {
+    "status": 200,
+    "bytes": 373
+   },
+   "/metrics": {
+    "status": 200,
+    "bytes": 8118
+   },
+   "/v1/completions": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"cmpl-1766c642508e47dab9c0a7ec0f11552b\", \"object\": \"text_completion\", \"created\": 1793763447, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"text\": \" P"
+   },
+   "/v1/responses": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"resp_29f39de9c9444f3b9ccb4fb82558a160\", \"object\": \"response\", \"created_at\": 1793763447, \"status\": \"completed\", \"error\": null, \"incomplete_details\": null, \"model\": \"local-model\", \"output\": [{\"i"
+   },
+   "/v1/messages": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"msg_7a04fb77d81740a985a7dacb4926ab95\", \"type\": \"message\", \"role\": \"assistant\", \"model\": \"local-model\", \"content\": [{\"type\": \"text\", \"text\": \"OK\"}], \"stop_reason\": \"end_turn\", \"stop_sequence\": "
+   },
+   "/v1/embeddings": {
+    "status": 404
+   },
+   "image": {
+    "status": 400,
+    "ok": false,
+    "excerpt": "{\"error\": {\"message\": \"this server accepts text parts only; image, audio and video inputs are unsupported\", \"type\": \"invalid_request_error\"}}"
+   }
+  },
+  "quality": {
+   "rows": [
+    {
+     "id": "arith",
+     "ok": false,
+     "why": "regex",
+     "answer": "4037",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 80.6
+    },
+    {
+     "id": "speed",
+     "ok": true,
+     "why": "regex",
+     "answer": "120",
+     "reasoning_chars": 0,
+     "tokens": 4,
+     "ttft_ms": 111.5
+    },
+    {
+     "id": "count_r",
+     "ok": true,
+     "why": "regex",
+     "answer": "3",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 97.9
+    },
+    {
+     "id": "instr",
+     "ok": true,
+     "why": "regex",
+     "answer": "PONG",
+     "reasoning_chars": 0,
+     "tokens": 3,
+     "ttft_ms": 68.2
+    },
+    {
+     "id": "json",
+     "ok": true,
+     "why": "regex",
+     "answer": "{\"name\": \"Ada\", \"age\": 36, \"lang\": \"Python\"}",
+     "reasoning_chars": 0,
+     "tokens": 20,
+     "ttft_ms": 98.9
+    },
+    {
+     "id": "french",
+     "ok": true,
+     "why": "regex",
+     "answer": "Le rapide renard brun saute par-dessus le chien paresseux.",
+     "reasoning_chars": 0,
+     "tokens": 17,
+     "ttft_ms": 96.2
+    },
+    {
+     "id": "syllogism",
+     "ok": true,
+     "why": "regex",
+     "answer": "Yes",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 110.2
+    },
+    {
+     "id": "units",
+     "ok": true,
+     "why": "regex",
+     "answer": "5.63",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 115.0
+    },
+    {
+     "id": "summarize",
+     "ok": true,
+     "why": "words",
+     "answer": "Committee approved annual budget after debate.",
+     "reasoning_chars": 0,
+     "tokens": 9,
+     "ttft_ms": 103.7
+    },
+    {
+     "id": "code",
+     "ok": true,
+     "why": "ok",
+     "answer": "```python\ndef is_palindrome(s):\n    cleaned = ''.join(char.lower() for char in s if char.isalnum())\n    return cleaned == cleaned[::-1]\n```",
+     "reasoning_chars": 0,
+     "tokens": 39,
+     "ttft_ms": 113.8
+    },
+    {
+     "id": "date",
+     "ok": true,
+     "why": "regex",
+     "answer": "Tuesday",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 95.8
+    },
+    {
+     "id": "multi",
+     "ok": true,
+     "why": "regex",
+     "answer": "8",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 105.9
+    }
+   ],
+   "passed": 11,
+   "total": 12
+  },
+  "fidelity": {
+   "rows": [
+    {
+     "prompt": "Name three prime numbers between 10 and 20. Answer in one line.",
+     "sha": "c2352076bee38445dd95",
+     "chars": 15,
+     "answer": "11, 13, and 17.",
+     "tokens": 13
+    },
+    {
+     "prompt": "What is the capital of Australia? One word.",
+     "sha": "b36f06bee2e4f5485ff6",
+     "chars": 8,
+     "answer": "Canberra",
+     "tokens": 3
+    },
+    {
+     "prompt": "Write the first line of a haiku about winter.",
+     "sha": "2dcedad55f087cdb3299",
+     "chars": 22,
+     "answer": "Silent snow falls down",
+     "tokens": 6
+    },
+    {
+     "prompt": "Explain what a hash table is in one sentence.",
+     "sha": "d3303d1b1d22404da77c",
+     "chars": 241,
+     "answer": "A hash table is a data structure that stores key-value pairs and uses a hash function to compute an index into an array of buckets or slots, allowing for efficient average-case constant-time $O(1)$ ac",
+     "tokens": 50
+    },
+    {
+     "prompt": "List the numbers 1 to 10 separated by commas.",
+     "sha": "f8cc5788974896b8f3f3",
+     "chars": 29,
+     "answer": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+     "tokens": 30
+    },
+    {
+     "prompt": "Complete: 'To be or not to be, that is the'",
+     "sha": "e8ef9cb28d63ca93d367",
+     "chars": 132,
+     "answer": "\"Question.\"\n\nThe full line from William Shakespeare's *Hamlet* (Act 3, Scene 1) is:\n\"To be, or not to be, that is the **question**.\"",
+     "tokens": 43
+    }
+   ],
+   "combined_sha": "5633e6ae9f1f0c49d6c3f9ff"
+  }
+ }
+}

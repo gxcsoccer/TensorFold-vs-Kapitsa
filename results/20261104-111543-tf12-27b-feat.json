@@ -1,0 +1,430 @@
+{
+ "meta": {
+  "label": "tf12-27b-feat",
+  "spec": {
+   "engine": "tf12",
+   "model": "27b",
+   "ctx": 32768,
+   "slots": null,
+   "port": 8303,
+   "name": "local-model",
+   "extra": [],
+   "env": {}
+  },
+  "model_path": "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+  "host": "GAOdeMac-mini.local",
+  "chip": "Apple M4 Pro",
+  "macos": "27.2",
+  "started": 1793762143.3993769,
+  "phases": [
+   "startup",
+   "warmup",
+   "tools",
+   "structured",
+   "endpoints",
+   "thinking",
+   "errors",
+   "cancel",
+   "quality",
+   "fidelity"
+  ],
+  "cmd": [
+   "tensorfold",
+   "serve",
+   "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+   "--port",
+   "8303",
+   "--name",
+   "local-model",
+   "--context",
+   "32768",
+   "--no-thinking"
+  ],
+  "footprint_end": {
+   "phys_footprint": 32212254720.0,
+   "phys_footprint_peak": 32212254720.0
+  },
+  "ended": 1793762191.619018
+ },
+ "phases": {
+  "startup": {
+   "load_s": 2.35,
+   "footprint_idle": {
+    "phys_footprint": 22548578304.0,
+    "phys_footprint_peak": 22548578304.0
+   },
+   "models": {
+    "object": "list",
+    "data": [
+     {
+      "id": "local-model",
+      "object": "model",
+      "created": 1793762145,
+      "owned_by": "tensorfold",
+      "context_length": 32768,
+      "max_model_len": 32768,
+      "reasoning": {
+       "default_enabled": false,
+       "supported_efforts": [
+        "xhigh",
+        "medium",
+        "low",
+        "none"
+       ]
+      }
+     }
+    ]
+   },
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 22816010696,
+     "cache": 0,
+     "peak": 22816010696
+    },
+    "live": {
+     "connections": 0,
+     "waiting": 0,
+     "decode_tokens_per_second": 0.0,
+     "prefill_tokens_per_second": 0.0
+    },
+    "version": "1.2.2",
+    "backend": "metal",
+    "device": "Apple M4 Pro"
+   },
+   "cmd": [
+    "tensorfold",
+    "serve",
+    "/Users/lang/.cache/huggingface/hub/models--TensorFold--Qwen3.8-27B-MLX-4bit/snapshots/22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+    "--port",
+    "8303",
+    "--name",
+    "local-model",
+    "--context",
+    "32768",
+    "--no-thinking"
+   ]
+  },
+  "warmup": {
+   "done": true,
+   "footprint": {
+    "phys_footprint": 23622320128.0,
+    "phys_footprint_peak": 23622320128.0
+   }
+  },
+  "tools": {
+   "nonstream": {
+    "status": null,
+    "tool_calls": [
+     {
+      "id": "call_a6c9e6bafb33797eb9017901",
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\":\"Paris\"}"
+      }
+     }
+    ],
+    "pass": true
+   },
+   "roundtrip": {
+    "status": 200,
+    "content": "The current weather in Paris is **18\u00b0C**.",
+    "pass": true
+   },
+   "stream": {
+    "ok": true,
+    "tool_call_chunks": 5,
+    "pass": true
+   }
+  },
+  "structured": {
+   "json_schema": {
+    "status": 200,
+    "valid": true,
+    "excerpt": "{\n  \"name\": \"Elias Thorne\",\n  \"age\": 34,\n  \"city\": \"Portland, Oregon\"\n}"
+   },
+   "json_object": {
+    "status": 200,
+    "valid": true
+   }
+  },
+  "endpoints": {
+   "/v1/models": {
+    "status": 200,
+    "bytes": 266
+   },
+   "/health": {
+    "status": 200,
+    "bytes": 354
+   },
+   "/metrics": {
+    "status": 200,
+    "bytes": 16784
+   },
+   "/v1/completions": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"cmpl-24e1f82f55791467884c52acf30bbfc8\", \"object\": \"text_completion\", \"created\": 1793762158, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"text\": \" P"
+   },
+   "/v1/responses": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"resp_2d1c4cf121685eda411ef0d1cd51bf2b\", \"object\": \"response\", \"created_at\": 1793762159, \"status\": \"completed\", \"error\": null, \"incomplete_details\": null, \"model\": \"local-model\", \"output\": [{\"i"
+   },
+   "/v1/messages": {
+    "status": 200,
+    "ok": true,
+    "excerpt": "{\"id\": \"msg_8230b56e4e570b0d47c0993ffbc0d838\", \"type\": \"message\", \"role\": \"assistant\", \"model\": \"local-model\", \"content\": [{\"type\": \"text\", \"text\": \"OK.\"}], \"stop_reason\": \"end_turn\", \"stop_sequence\":"
+   },
+   "/v1/embeddings": {
+    "status": 400
+   },
+   "image": {
+    "status": 400,
+    "ok": false,
+    "excerpt": "{\"error\": {\"message\": \"this server accepts text parts only; image, audio and video inputs are unsupported\", \"type\": \"invalid_request_error\"}}"
+   }
+  },
+  "thinking": {
+   "off": {
+    "tokens": 6,
+    "ttft_ms": 574.0,
+    "total_s": 0.915,
+    "reasoning_chars": 0,
+    "answer": "$0.05",
+    "correct": true
+   },
+   "on": {
+    "tokens": 116,
+    "ttft_ms": 861.9,
+    "total_s": 8.79,
+    "reasoning_chars": 248,
+    "answer": "$0.05",
+    "correct": true
+   }
+  },
+  "errors": {
+   "empty_messages": {
+    "status": 400,
+    "error": "messages must be a non-empty list"
+   },
+   "unknown_model": {
+    "status": 200,
+    "error": "{\"id\": \"chatcmpl-55ed22a4c3ed1e3192a33bc2971b8bfd\", \"object\": \"chat.completion\", \"created\": 1793762169, \"model\": \"local-model\", \"choices\": [{\"index\": 0, \"messag"
+   },
+   "no_messages": {
+    "status": 400,
+    "error": "messages must be a non-empty list"
+   },
+   "huge_max_tokens": {
+    "status": 400,
+    "error": "This server's maximum context length is 32768 tokens, but the rendered prompt has 13 tokens and requests 1000000 reply tokens, which exceeds the context window. Reduce the prompt to at most 0 prompt t"
+   },
+   "bad_role": {
+    "status": 400,
+    "error": "message role must be system, developer, user, assistant or tool"
+   },
+   "malformed_json": {
+    "status": 400,
+    "error": "{\"error\": {\"message\": \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}}"
+   }
+  },
+  "cancel": {
+   "chunks_before_close": 5,
+   "health_after": 200,
+   "health": {
+    "status": "ok",
+    "model": "local-model",
+    "model_ids": [
+     "local-model"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+     "active": 25745502928,
+     "cache": 0,
+     "peak": 25745502928
+    },
+    "live": {
+     "connections": 1,
+     "waiting": 0,
+     "decode_tokens_per_second": 12.0,
+     "prefill_tokens_per_second": 73.6
+    },
+    "version": "1.2.2",
+    "backend": "metal",
+    "device": "Apple M4 Pro"
+   },
+   "next_request_ok": true,
+   "next_ttft_ms": 243.0
+  },
+  "quality": {
+   "rows": [
+    {
+     "id": "arith",
+     "ok": false,
+     "why": "regex",
+     "answer": "4219",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 535.6
+    },
+    {
+     "id": "speed",
+     "ok": true,
+     "why": "regex",
+     "answer": "120",
+     "reasoning_chars": 0,
+     "tokens": 4,
+     "ttft_ms": 448.2
+    },
+    {
+     "id": "count_r",
+     "ok": true,
+     "why": "regex",
+     "answer": "3",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 445.8
+    },
+    {
+     "id": "instr",
+     "ok": true,
+     "why": "regex",
+     "answer": "PONG",
+     "reasoning_chars": 0,
+     "tokens": 3,
+     "ttft_ms": 304.5
+    },
+    {
+     "id": "json",
+     "ok": true,
+     "why": "regex",
+     "answer": "{\"name\": \"Ada\", \"age\": 36, \"lang\": \"Python\"}",
+     "reasoning_chars": 0,
+     "tokens": 20,
+     "ttft_ms": 448.3
+    },
+    {
+     "id": "french",
+     "ok": true,
+     "why": "regex",
+     "answer": "Le rapide renard brun saute par-dessus le chien paresseux.",
+     "reasoning_chars": 0,
+     "tokens": 17,
+     "ttft_ms": 446.2
+    },
+    {
+     "id": "syllogism",
+     "ok": true,
+     "why": "regex",
+     "answer": "Yes",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 451.4
+    },
+    {
+     "id": "units",
+     "ok": true,
+     "why": "regex",
+     "answer": "5.63",
+     "reasoning_chars": 0,
+     "tokens": 5,
+     "ttft_ms": 455.6
+    },
+    {
+     "id": "summarize",
+     "ok": true,
+     "why": "words",
+     "answer": "Committee approved annual budget after long debate.",
+     "reasoning_chars": 0,
+     "tokens": 10,
+     "ttft_ms": 451.1
+    },
+    {
+     "id": "code",
+     "ok": true,
+     "why": "ok",
+     "answer": "```python\ndef is_palindrome(s):\n    cleaned = ''.join(ch.lower() for ch in s if not ch.isspace())\n    return cleaned == cleaned[::-1]\n```",
+     "reasoning_chars": 0,
+     "tokens": 40,
+     "ttft_ms": 454.1
+    },
+    {
+     "id": "date",
+     "ok": false,
+     "why": "regex",
+     "answer": "Wednesday",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 447.4
+    },
+    {
+     "id": "multi",
+     "ok": true,
+     "why": "regex",
+     "answer": "8",
+     "reasoning_chars": 0,
+     "tokens": 2,
+     "ttft_ms": 454.1
+    }
+   ],
+   "passed": 10,
+   "total": 12
+  },
+  "fidelity": {
+   "rows": [
+    {
+     "prompt": "Name three prime numbers between 10 and 20. Answer in one line.",
+     "sha": "8dcb1c3dd97851040492",
+     "chars": 14,
+     "answer": "11, 13, and 17",
+     "tokens": 12
+    },
+    {
+     "prompt": "What is the capital of Australia? One word.",
+     "sha": "b36f06bee2e4f5485ff6",
+     "chars": 8,
+     "answer": "Canberra",
+     "tokens": 3
+    },
+    {
+     "prompt": "Write the first line of a haiku about winter.",
+     "sha": "17f99d37fb4350c208a1",
+     "chars": 23,
+     "answer": "Cold wind bites the air",
+     "tokens": 6
+    },
+    {
+     "prompt": "Explain what a hash table is in one sentence.",
+     "sha": "0fc2edc0b659e209090a",
+     "chars": 170,
+     "answer": "A hash table is a data structure that uses a hash function to map keys to array indices, enabling efficient average-case constant-time lookups, insertions, and deletions.",
+     "tokens": 36
+    },
+    {
+     "prompt": "List the numbers 1 to 10 separated by commas.",
+     "sha": "f8cc5788974896b8f3f3",
+     "chars": 29,
+     "answer": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+     "tokens": 30
+    },
+    {
+     "prompt": "Complete: 'To be or not to be, that is the'",
+     "sha": "1f5087db919ced5c123c",
+     "chars": 8,
+     "answer": "question",
+     "tokens": 2
+    }
+   ],
+   "combined_sha": "7e79897e0f4ecf4726ed37f1"
+  }
+ }
+}

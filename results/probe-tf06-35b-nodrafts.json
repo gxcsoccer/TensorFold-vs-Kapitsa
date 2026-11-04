@@ -1,0 +1,60 @@
+{
+ "label": "tf06-35b-nodrafts",
+ "spec": {
+  "engine": "tf06",
+  "model": "35b",
+  "ctx": 32768,
+  "slots": null,
+  "port": 8340,
+  "name": "local-model",
+  "extra": [
+   "--no-drafts"
+  ],
+  "env": {}
+ },
+ "cmd": [
+  "/opt/homebrew/opt/tensorfold@0.6/bin/tensorfold",
+  "serve",
+  "/Users/lang/.cache/huggingface/hub/models--mlx-community--Qwen3.5-35B-A3B-4bit/snapshots/1e20fd8d42056f870933bf98ca6211024744f7ec",
+  "--port",
+  "8340",
+  "--name",
+  "local-model",
+  "--context",
+  "32768",
+  "--no-thinking",
+  "--no-drafts"
+ ],
+ "env": {},
+ "ts": 1793763802.2534752,
+ "load_s": 24.96,
+ "footprint": {
+  "phys_footprint": 21474836480.0,
+  "phys_footprint_peak": 23622320128.0
+ },
+ "prefill": {
+  "prompt_tokens": 4093,
+  "ttft_s": 4.238,
+  "prefill_tps": 965.8
+ },
+ "decode": {
+  "n": 3,
+  "tps_median": 89.91,
+  "ttft_ms_median": 70.5,
+  "tokens": 256
+ },
+ "log_lines": [
+  "[tensorfold] Qwen3.6 MoE: no MTP layer for this checkpoint, so one token a round. To draft, fetch it (0.5 GB): hf download TensorFold/Qwen3.6-35B-A3B-MLX-4bit-MTP mtp-4bit.safetensors",
+  "[tensorfold] serving local-model at http://127.0.0.1:8340/v1 (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: off; context: 32768; loaded in 24.8s)",
+  "[tensorfold] done req-8820afea0c8b prompt=15 cached=0 thinking=False effort=none tokens=2 sha=69d417e7cb02 finish=stop tok/s=84.5 ttft=0.08s prefill=0.08s rounds=1 accepted=0/0 ms/round=11.7 forward=11.7 draft=0.0 post=0.0 rows=1.0 checkpoints=0 (0.00 GiB, hits=0 misses=1 evictions=0)",
+  "[tensorfold] done req-9c0295813c47 prompt=15 cached=0 thinking=False effort=none tokens=2 sha=69d417e7cb02 finish=stop tok/s=86.6 ttft=0.05s prefill=0.05s rounds=1 accepted=0/0 ms/round=11.4 forward=11.4 draft=0.0 post=0.0 rows=1.0 checkpoints=0 (0.00 GiB, hits=0 misses=2 evictions=0)",
+  "[tensorfold] done req-b2368b72aae0 prompt=4093 cached=0 thinking=False effort=none tokens=8 sha=0003c2414865 finish=length tok/s=82.7 ttft=4.24s prefill=4.23s rounds=7 accepted=0/0 ms/round=12.0 forward=12.0 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.14 GiB, hits=0 misses=3 evictions=0)",
+  "[tensorfold] done req-7ff688516586 prompt=25 cached=0 thinking=False effort=none tokens=99 sha=3bfa17386551 finish=stop tok/s=88.9 ttft=0.07s prefill=0.07s rounds=98 accepted=0/0 ms/round=11.2 forward=11.2 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.14 GiB, hits=0 misses=4 evictions=0)",
+  "[tensorfold] done req-b58046eb72f6 prompt=25 cached=0 thinking=False effort=none tokens=99 sha=3bfa17386551 finish=stop tok/s=89.0 ttft=0.07s prefill=0.07s rounds=98 accepted=0/0 ms/round=11.2 forward=11.2 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.14 GiB, hits=0 misses=5 evictions=0)",
+  "[tensorfold] done req-ebc5255274d4 prompt=25 cached=0 thinking=False effort=none tokens=99 sha=3bfa17386551 finish=stop tok/s=89.0 ttft=0.07s prefill=0.07s rounds=98 accepted=0/0 ms/round=11.2 forward=11.2 draft=0.0 post=0.0 rows=1.0 checkpoints=1 (0.14 GiB, hits=0 misses=6 evictions=0)"
+ ],
+ "footprint_peak": {
+  "phys_footprint": 21474836480.0,
+  "phys_footprint_peak": 25769803776.0
+ }
+}

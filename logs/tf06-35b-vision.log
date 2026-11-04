@@ -1,0 +1,2 @@
+[tensorfold] TensorFold 1.2.2 is available (this is 0.6.6): run `tensorfold update`, then restart the server
+tensorfold: --vision supports GLM-5.3-Flash, Flash Next and Qwen3.5/3.8 dense checkpoints with their vision tower
